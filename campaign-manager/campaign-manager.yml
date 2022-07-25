@@ -1,0 +1,56 @@
+server:
+  port: 8086
+  connection-timeout: 5s
+  forward-headers-strategy: framework
+
+spring:
+  data.rest.base-path: api/v1
+  datasource:
+    url: jdbc:postgresql://localhost:5432/campaign-manager?ssl=false
+    username: user
+    password: password
+  jpa:
+    properties:
+      hibernate:
+        generate_statistics: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
+external-hal-links:
+  campaigns:
+    brands: /api/v1/campaigns/{?campaignId}/brands
+
+profiles:
+  url: http://localhost:8080
+  ratings-url: api/v1/ratings
+  brands-search-by-ids-url: api/v1/brands/search/by-ids?ids={idsList}
+  brands-url: api/v1/brands/{id}
+
+notifications:
+  url: http://localhost:8080
+  email-templates:
+    new-comment-template: "d-1baa6de59a3a439e9fb5b5a6bc8bfde8"
+    new-pitch-template: "d-fdb2c6e88ea64b0e8f7db16abdd0e0e9"
+    campaign-updated-template: "d-6767139248574fd5a4fb183d3fe961a1"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+health:
+  config:
+    enabled: false
+
+springdoc.api-docs.path: /api/v1/campaign-manager/api-doc
+logging:
+  level:
+    com.agenatech: INFO
+
+
+

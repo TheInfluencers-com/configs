@@ -1,0 +1,36 @@
+server:
+  port: 8087
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${auth.url}/auth/realms/${auth.realm}
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 10000
+        loggerLevel: basic
+youtube.url: https://www.googleapis.com/youtube/v3
+instagram.url: https://graph.instagram.com/v13.0
+facebook.url: https://graph.facebook.com/v13.0
+profiles.url: http://localhost:8080
+auth:
+  url: http://localhost:8180
+  realm: influencers-com
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+health:
+  config:
+    enabled: false
+springdoc.api-docs.path: /api/v1/social-media-adapter/api-doc
+logging:
+  level:
+    com.agenatech: INFO
+    org.springframework.security: INFO
+    org.springframework.web: INFO

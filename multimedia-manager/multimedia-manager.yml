@@ -1,0 +1,13 @@
+spring.servlet.multipart.max-file-size: 1MB
+amazon:
+  accessKey: '{cipher}a739bca9a5fa16da49bd3276949991ecaae07738def9f649fbe8a32fa1a6e61a2cdf4e72494d57a2eb7b69c1d3768871'
+  secretKey: '{cipher}5531abaea0696a2314ebed966f99c3931226ad2ef11e28fe39dac9c731a51256b00c4dd6db71da6fd22b58c1909e282ed2c4f2ae38c6328b2a8690989c12f048'
+  bucketName: influencers-multimedia-manager
+  region: eu-north-1
+springdoc.api-docs.path: /api/v1/multimedia/api-doc
+management.endpoints.web.exposure.include: '*'
+logging.level:
+  com.agenatech: INFO
+health:
+  config:
+    enabled: false

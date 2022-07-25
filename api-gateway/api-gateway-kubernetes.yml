@@ -1,0 +1,63 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: profilesPrincipal
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me
+            - Method=GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
+        - id: social-media-adapter
+          uri: http://social-media-adapter
+          predicates:
+            - Path=/api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/social-media-adapter/api-doc
+            - Method=POST,GET
+          filters:
+            - AddPrincipalToPathFilter
+        - id: profiles
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/influencers/**, /api/v1/influencers, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/ratings/search/**, /api/v1/profiles/api-doc
+            - Method=GET
+        - id: descriptions
+          uri: http://campaign-manager
+          predicates:
+            - Path=/api/v1/*/*/description
+            - Method=GET,PUT,PATCH
+          filters:
+            - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
+        - id: campaign-manager
+          uri: http://campaign-manager
+          predicates:
+            - Path=/api/v1/comments/**, /api/v1/brief-influencers, /api/v1/brief-influencers/**, /api/v1/brief-influencers/search/**, /api/v1/briefs/**, /api/v1/briefs, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**, /api/v1/pitches, /api/v1/pitches/**, /api/v1/pitches/search/**, /api/v1/drafts/**, /api/v1/campaign-manager/api-doc
+        - id: campaignsPrincipal
+          uri: http://campaign-manager
+          predicates:
+            - Path=/api/v1/commands/me/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
+            - Method=POST,GET
+          filters:
+            - AddPrincipalToPathFilter
+        - id: getEntitiesProfiles
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/brands/**
+            - Method=GET
+        - id: getEntitiesCampaigns
+          uri: http://campaign-manager
+          predicates:
+            - Path=/api/v1/campaigns/**
+            - Method=GET
+        - id: multimedia
+          uri: http://multimedia-manager
+          predicates:
+            - Path=/api/v1/multimedia, /api/v1/multimedia/**, /api/v1/multimedia-manager/**
+        - id: openapi
+          uri: http://api-gateway
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
+keycloak-client:
+  server-url: https://authentication.theinfluencers.com/auth

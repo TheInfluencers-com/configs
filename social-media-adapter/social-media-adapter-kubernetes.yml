@@ -1,0 +1,4 @@
+profiles.url: http://profiles
+auth:
+  url: https://authentication.theinfluencers.com/auth/
+  realm: influencers-com
