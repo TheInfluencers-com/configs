@@ -10,7 +10,7 @@ spring:
   jpa:
     properties:
       hibernate:
-        generate_statistics: false
+        generate_statistics: true
         cache:
           use_second_level_cache: false
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
@@ -41,6 +41,6 @@ health:
     enabled: false
 logging:
   level:
-    com.agenatech: INFO
+    com.agenatech: DEBUG
 
 

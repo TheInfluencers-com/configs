@@ -39,14 +39,24 @@ spring:
         - id: profilesPrincipal
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me
-            - Method=GET,PUT,PATCH,DELETE
+            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices
+            - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
+        - id: profiles-brand
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/brands/me
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - brand
         - id: social-media-adapter
           uri: http://localhost:8087
           predicates:
-            - Path=/api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/social-media-adapter/api-doc
+            - Path=/api/v1/influencers/me/*/followers-count, /api/v1/influencers/me/*/user-id, /api/v1/social-media-adapter/api-doc
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
@@ -58,7 +68,15 @@ spring:
         - id: campaign-manager
           uri: http://localhost:8086
           predicates:
-            - Path=/api/v1/comments/**, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**, /api/v1/pitches, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc
+            - Path=/api/v1/comments/**, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**, /api/v1/pitches, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**
+        - id: campaign-manager-brand
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/v1/campaigns/**
+            - Method=PUT,PATCH
+          metadata:
+            auth-roles:
+              - brand
         - id: campaignsPrincipal
           uri: http://localhost:8086
           predicates:
@@ -83,6 +101,18 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
+        - id: notification-service
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc
+            - Method=POST
+        - id: notification-service-me
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/v1/notifications/me/device-token
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
   security:
     oauth2:
       client:
@@ -119,9 +149,9 @@ health:
 
 logging:
   level:
-    org.springframework.cloud.gateway: INFO
-    org.springframework.security: INFO
-    reactor.netty.http.client: INFO
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.security: DEBUG
+    reactor.netty.http.client: DEBUG
 
 springdoc:
   packages-to-scan: com.agenatech

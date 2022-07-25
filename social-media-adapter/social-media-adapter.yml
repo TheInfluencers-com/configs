@@ -31,6 +31,6 @@ health:
 springdoc.api-docs.path: /api/v1/social-media-adapter/api-doc
 logging:
   level:
-    com.agenatech: INFO
-    org.springframework.security: INFO
-    org.springframework.web: INFO
+    com.agenatech: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
