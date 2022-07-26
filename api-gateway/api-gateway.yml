@@ -60,7 +60,7 @@ spring:
             - Method=PATCH
           metadata:
             auth-roles:
-              - admin
+              - influencers-admin
         - id: social-media-adapter
           uri: http://localhost:8087
           predicates:
