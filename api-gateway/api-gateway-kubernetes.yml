@@ -19,6 +19,14 @@ spring:
           metadata:
             auth-roles:
               - brand
+        - id: profiles-admin
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/influencers/*
+            - Method=PATCH
+          metadata:
+            auth-roles:
+              - admin
         - id: social-media-adapter
           uri: http://social-media-adapter
           predicates:
