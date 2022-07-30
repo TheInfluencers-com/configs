@@ -39,14 +39,14 @@ spring:
         - id: profilesPrincipal
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices
+            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/support
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profiles-brand
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/brands/me
+            - Path=/api/v1/brands/me, /api/v1/brands/me/support
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
