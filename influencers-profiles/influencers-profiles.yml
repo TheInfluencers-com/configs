@@ -30,6 +30,11 @@ external-hal-links:
     briefRequests: /api/v1/briefs/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
     brandCampaigns: /api/v1/campaigns/search/by-brand{?brandId,lifecycleStatus,page,size,sort}
     pitchRequests: /api/v1/pitches/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
+notifications:
+  url: http://localhost:9095
+  support-email: "sergey.kutcyi@gmail.com"
+  email-templates:
+    support-template: "d-1baa6de59a3a439e9fb5b5a6bc8bfde8"
 management:
   endpoints:
     web:
