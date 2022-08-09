@@ -39,7 +39,7 @@ spring:
         - id: profilesPrincipal
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/support
+            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/support, /api/v1/influencers/me/deals
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -143,7 +143,7 @@ spring:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 keycloak-client:
-  server-url: https://auth-dev.agenadev.com/auth
+  server-url: https://authentication-dev.theinfluencers.com/auth
   realm: influencers-com
 management:
   endpoints:
