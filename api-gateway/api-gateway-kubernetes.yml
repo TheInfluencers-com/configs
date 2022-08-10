@@ -5,7 +5,7 @@ spring:
         - id: profilesPrincipal
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/*/*, /api/v1/influencers/me/support
+            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/*/*, /api/v1/influencers/me/support, /api/v1/influencers/me/deals
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
