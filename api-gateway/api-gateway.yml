@@ -81,7 +81,7 @@ spring:
           uri: http://localhost:8086
           predicates:
             - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*
-            - Method=PUT,PATCH
+            - Method=GET,PUT,PATCH
           metadata:
             auth-roles:
               - brand
