@@ -88,8 +88,10 @@ spring:
         - id: campaign-manager-invoice
           uri: http://localhost:8086
           predicates:
-            - Path=/api/v1/invoice/influencer/**, /api/v1/influencer-invoice/**
+            - Path=/api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**
             - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
         - id: campaignsPrincipal
           uri: http://localhost:8086
           predicates:
