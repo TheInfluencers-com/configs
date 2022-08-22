@@ -85,6 +85,11 @@ spring:
           metadata:
             auth-roles:
               - brand
+        - id: campaign-manager-invoice
+          uri: http://localhost:8086
+          predicates:
+            - Path=/api/v1/invoice/influencer/**, /api/v1/influencer-invoice/**
+            - Method=GET
         - id: campaignsPrincipal
           uri: http://localhost:8086
           predicates:
