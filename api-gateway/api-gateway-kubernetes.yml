@@ -61,8 +61,8 @@ spring:
         - id: campaign-manager-invoice
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/commands/influencers/me/count-budget-goal, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**
-            - Method=GET
+            - Path= /api/v1/commands/influencers/me/count-budget-goal, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**
+            - Method=GET,POST
           filters:
             - AddPrincipalToPathFilter
         - id: campaignsPrincipal
