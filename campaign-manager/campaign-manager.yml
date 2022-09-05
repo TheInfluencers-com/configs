@@ -30,6 +30,7 @@ profiles:
   ratings-url: /api/v1/ratings
   brands-search-by-ids-url: /api/v1/brands/search/by-ids?ids={idsList}
   brands-url: /api/v1/brands/{id}
+  full-profile: /api/v1/influencers/{id}
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
