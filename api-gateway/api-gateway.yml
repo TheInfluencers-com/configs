@@ -80,8 +80,10 @@ spring:
         - id: campaign-manager-brand
           uri: http://localhost:8086
           predicates:
-            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*
+            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget, , /api/v1/brand-budget/**
             - Method=GET,PUT,PATCH
+          filters:
+            - AddPrincipalToPathFilter
           metadata:
             auth-roles:
               - brand
