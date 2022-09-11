@@ -68,7 +68,7 @@ spring:
         - id: campaignsPrincipal
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/commands/me/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
+            - Path=/api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
