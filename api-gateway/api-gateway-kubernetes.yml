@@ -76,7 +76,7 @@ spring:
           uri: http://profiles
           predicates:
             - Path=/api/v1/brands/**
-            - Method=GET
+            - Method=POST,GET, PUT, PATCH
         - id: getEntitiesCampaigns
           uri: http://campaign-manager
           predicates:

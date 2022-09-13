@@ -56,7 +56,7 @@ spring:
         - id: profiles-admin
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/*
+            - Path=/api/v1/influencers/*, /api/v1/brands/**
             - Method=PATCH
           metadata:
             auth-roles:
