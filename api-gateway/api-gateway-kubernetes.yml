@@ -68,7 +68,7 @@ spring:
         - id: campaignsPrincipal
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/brand-billing-info, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
+            - Path=/api/v1/brand-billing-info, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
             - Method=POST,GET, PUT, PATCH
           filters:
             - AddPrincipalToPathFilter
