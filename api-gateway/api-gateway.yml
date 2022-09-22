@@ -53,13 +53,6 @@ spring:
           metadata:
             auth-roles:
               - brand
-        - id: profilePrices
-          uri: http://localhost:8080
-          predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/influencers/*/deals
-            - Method=POST,GET,PUT,PATCH,DELETE
-          filters:
-            - AddPrincipalToPathFilterPrices
         - id: profiles-admin
           uri: http://localhost:8080
           predicates:
@@ -78,7 +71,7 @@ spring:
         - id: profiles
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc
+            - Path=/api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc
             - Method=GET
         - id: campaign-manager
           uri: http://localhost:8086
