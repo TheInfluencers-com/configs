@@ -44,7 +44,7 @@ spring:
         - id: profiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/**, /api/v1/influencers, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/ratings/search/**, /api/v1/profiles/api-doc
+            - Path=/api/v1/influencers, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/ratings/search/**, /api/v1/profiles/api-doc
             - Method=GET
         - id: descriptions
           uri: http://campaign-manager
