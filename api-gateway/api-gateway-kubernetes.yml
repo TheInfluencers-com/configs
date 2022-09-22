@@ -19,6 +19,13 @@ spring:
           metadata:
             auth-roles:
               - brand
+        - id: profilePrices
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/influencers/*/prices, /api/v1/influencers/*/deals
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathPricesFilter
         - id: profiles-admin
           uri: http://profiles
           predicates:
