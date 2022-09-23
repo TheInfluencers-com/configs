@@ -3,6 +3,9 @@ server:
   connection-timeout: 5s
   forward-headers-strategy: framework
 spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
   data.rest.base-path: api/v1
   datasource:
     url: jdbc:postgresql://localhost:5432/campaign-manager?ssl=false
