@@ -32,6 +32,7 @@ external-hal-links:
     pitchRequests: /api/v1/pitches/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
 notifications:
   url: http://localhost:9095
+  push-url: /api/v1/notifications
   support-email: "hello@theinfluencers.com"
   email-templates:
     support-template: "d-1fa1c40919e3412fae2e22e8ece535a0"
