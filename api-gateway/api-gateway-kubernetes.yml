@@ -69,7 +69,7 @@ spring:
           uri: http://campaign-manager
           predicates:
             - Path= /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create
-            - Method=GET,POST
+            - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: campaignsPrincipal
