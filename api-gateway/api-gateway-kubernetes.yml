@@ -107,8 +107,8 @@ spring:
         - id: notification-service-me
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/notifications/me/device-token
-            - Method=POST
+            - Path=/api/v1/notifications/me/device-token,  /api/v1/me/notification, api/v1/notification/mark_read
+            - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
 keycloak-client:
