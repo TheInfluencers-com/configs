@@ -39,7 +39,7 @@ spring:
         - id: profilesPrincipal
           uri: http://localhost:8080
           predicates:
-            - Path= /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/**, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**
+            - Path= /api/v1/me/platforms, /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/**, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
