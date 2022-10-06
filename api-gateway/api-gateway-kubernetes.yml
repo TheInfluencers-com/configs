@@ -12,7 +12,7 @@ spring:
         - id: profiles-brand
           uri: http://profiles
           predicates:
-            - Path=/api/v1/brands/me, /api/v1/brands/me/support, /api/v1/influencers/me/show-price-list, /api/v1/influencers/me/hide-price-list
+            - Path= /api/v1/me/platforms, /api/v1/brands/me, /api/v1/brands/me/support, /api/v1/influencers/me/show-price-list, /api/v1/influencers/me/hide-price-list
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -22,7 +22,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/influencers/*/deals, /api/v1/me/platforms
+            - Path=/api/v1/influencers/*/prices, /api/v1/influencers/*/deals
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
