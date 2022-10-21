@@ -30,6 +30,8 @@ external-hal-links:
     briefRequests: /api/v1/briefs/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
     brandCampaigns: /api/v1/campaigns/search/by-brand{?brandId,lifecycleStatus,page,size,sort}
     pitchRequests: /api/v1/pitches/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
+campaigns:
+  url: http://localhost:8086
 notifications:
   url: http://localhost:9095
   push-url: /api/v1/notifications
