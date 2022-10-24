@@ -107,7 +107,7 @@ spring:
         - id: notification-service-me
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read
+            - Path=/api/v1/chat, /api/v1/chat/**, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
