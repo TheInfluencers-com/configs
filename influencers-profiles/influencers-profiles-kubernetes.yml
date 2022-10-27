@@ -7,4 +7,4 @@ notifications:
   url: http://notification-service
   push-url: /api/v1/notifications
 campaigns:
-  url: http://localhost:8086
+  url: http://campaign-manager
