@@ -107,7 +107,7 @@ spring:
         - id: notification-chat
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete,  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, 
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete,  /api/v1/chat/{chat_id}/user/me/read/all
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
