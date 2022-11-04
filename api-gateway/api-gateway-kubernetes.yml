@@ -22,7 +22,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/influencers/*/deals
+            - Path=/api/v1/influencers/*/prices
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
