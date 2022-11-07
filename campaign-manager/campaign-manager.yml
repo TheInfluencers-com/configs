@@ -31,6 +31,7 @@ external-hal-links:
     brands: /api/v1/campaigns/{?campaignId}/brands
 profiles:
   url: http://localhost:8080
+  credit-url: /api/v1/credits/{id}
   ratings-url: /api/v1/ratings
   brands-search-by-ids-url: /api/v1/brands/search/by-ids?ids={idsList}
   brands-url: /api/v1/brands/{id}
