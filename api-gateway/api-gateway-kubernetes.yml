@@ -82,7 +82,7 @@ spring:
         - id: getEntitiesProfiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/brands/**
+            - Path=/api/v1/brands/**, /api/v1/credits, /api/v1/credits/**
             - Method=POST,GET, PUT, PATCH
         - id: getEntitiesCampaigns
           uri: http://campaign-manager
