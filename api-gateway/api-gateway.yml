@@ -99,7 +99,7 @@ spring:
         - id: campaign-manager-invoice
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**, /api/v1/campaign-instagram-post/**, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create
+            - Path= /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**, /api/v1/campaign-instagram-post/**, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create
             - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
