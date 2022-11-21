@@ -46,7 +46,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://localhost:8080
           predicates:
-            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
