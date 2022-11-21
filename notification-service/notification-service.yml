@@ -18,6 +18,9 @@ spring:
     time-zone: UTC
   sendgrid:
     api-key: test
+profiles:
+  url: http://localhost:8080
+  brand-info-by-name: /api/v1/brands/by-name/{name}
 app:
   email:
     enabled: true
