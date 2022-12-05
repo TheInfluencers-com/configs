@@ -63,7 +63,7 @@ spring:
         - id: profilePrices
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/*/prices
+            - Path=/api/v1/influencers/*/prices, /api/v1/influencers/me/hide/profile, /api/v1/influencers/me/show/profile
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
