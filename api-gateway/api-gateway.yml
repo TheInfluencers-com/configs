@@ -93,6 +93,13 @@ spring:
             - Path=/api/v1/comments/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**,/api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**
           filters:
             - AddPrincipalToPathFilter
+         - id: influencer-portfolio
+          uri: http://localhost:8086
+          predicates:
+            - Path= /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*
+            - Method=GET,POST,PUT
+          filters:
+            - AddPrincipalToPathFilter
         - id: campaign-manager-brand
           uri: http://localhost:8086
           predicates:
