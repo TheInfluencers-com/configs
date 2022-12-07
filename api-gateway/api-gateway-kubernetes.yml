@@ -82,7 +82,7 @@ spring:
         - id: influencer-portfolio
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*
+            - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*
             - Method=GET,POST,PUT
           filters:
             - AddPrincipalToPathFilter
