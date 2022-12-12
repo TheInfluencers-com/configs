@@ -2,6 +2,13 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: profilesCurrency
+          uri: http://profiles
+          predicates: 
+            - Path= /api/v1/currency, /api/v1/currency/** 
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: profilesPrincipal
           uri: http://profiles
           predicates:

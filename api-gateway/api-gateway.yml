@@ -36,6 +36,13 @@ spring:
         locator:
           enabled: false
       routes:
+        - id: profilesCurrency
+          uri: http://localhost:8080
+          predicates: 
+            - Path= /api/v1/currency, /api/v1/currency/** 
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: profilesPrincipal
           uri: http://localhost:8080
           predicates:
