@@ -50,5 +50,4 @@ health:
 logging:
   level:
     com.agenatech: DEBUG
-
-
+spring.jackson.serialization.FAIL_ON_EMPTY_BEANS: false
