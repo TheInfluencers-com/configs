@@ -31,15 +31,17 @@ external-hal-links:
     brands: /api/v1/campaigns/{?campaignId}/brands
 profiles:
   url: http://localhost:8080
-  currency-url: /api/v1/currency/{id}
-  credit-url: /api/v1/credits/{id}
-  credit-user: /api/v1/credits/change-status/{id}
   ratings-url: /api/v1/ratings
+  currency-url: /api/v1/currency/{id}
   brands-search-by-ids-url: /api/v1/brands/search/by-ids?ids={idsList}
   brands-url: /api/v1/brands/{id}
   full-profile: /api/v1/influencers/{id}
   brand-info-by-name: /api/v1/brands/by-name/{name}
+  credit-url: /api/v1/credits/{id}
+  credit-user: /api/v1/credits/change-status/{id}
   ratings-feedback: /api/v1/ratings/feedback/{id}
+  influencer-mood: /api/v1/mood/for-three-days/{id}
+  profiles: /api/v1/influencers
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
