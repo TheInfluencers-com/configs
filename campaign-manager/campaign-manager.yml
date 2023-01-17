@@ -40,8 +40,9 @@ profiles:
   credit-url: /api/v1/credits/{id}
   credit-user: /api/v1/credits/change-status/{id}
   ratings-feedback: /api/v1/ratings/feedback/{id}
-  influencer-mood: /api/v1/mood/for-three-days/{id}
+  influencer-mood: /api/v1/mood/for-three-days/{ids}/{moods}
   profiles: /api/v1/influencers
+  influencers-search-by-ids-url: /api/v1/influencers/search/by-ids?ids={idsList}
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
