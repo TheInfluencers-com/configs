@@ -43,6 +43,8 @@ profiles:
   influencer-mood: /api/v1/mood/for-three-days/{ids}/{moods}
   profiles: /api/v1/influencers
   influencers-search-by-ids-url: /api/v1/influencers/search/by-ids?ids={idsList}
+  influencers-search-by-name-url: /api/v1/influencers/search/by-name
+  influencer-mood-info: /api/v1/mood/for-three-days/{id}
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
