@@ -1,10 +1,24 @@
 server:
   port: 8080
 spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
   datasource:
-    url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/campaign-manager?ssl=false
+    url: jdbc:postgresql://database-dev.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/campaign-manager?ssl=false
     username: postgres
-    password: '{cipher}3ee95f8ed1d0eb56ba38c25255992a529c0a077155cea262c5318275b0a932db48c1cbdec9acedbb3de22b27b33609ac'
+    password: '{cipher}80b992ff695be1018a75becadb9f8ec4d87de4d2efe673d7ed31a921d9ffe4f4508c794ed487b7268c0b410e8cc8f8ab'
+  jpa:
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        generate_statistics: false
+    show-sql: false
+amazon:
+  accessKey: '{cipher}0c86cc7bd3f45eee7497fba64e26e06388d881ab646f719e2ab1aa90b1eb40b9ae2014040ace2f968712c1980cfecc51'
+  secretKey: '{cipher}14517e673e5a9fa034b42cc86e6f23aef2d2fdd138698d07db3697d049ff00648102b7e6f77567c5d482882b275167e3633391d0bcba02aa8045331e31d9be06'
+  bucketName: influencers-dev-multimedia-manager
+  region: eu-north-1
 
 profiles:
   url: http://profiles

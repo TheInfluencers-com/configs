@@ -2,17 +2,56 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: profilesCurrency
+          uri: http://profiles
+          predicates: 
+            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, currency/influencer/me/convert/*/*, /api/v1/currency/**
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: profilesPrincipal
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me
-            - Method=GET,PUT,PATCH,DELETE
+            - Path= /api/v1/information-about-each-platform, /api/v1/credits/influencer/me/accepted, /api/v1/credits/brand/me/accepted, /api/v1/credits/influencer/me/sent-or-accepted, /api/v1/credits/brand/me/sent-or-accepted, /api/v1/mood/me/today, /api/v1/mood/**, /api/v1/influencers/*/make-trusted,/api/v1/influencers/*/make-un-trusted, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /influencers/me/prices/decline-access/{brand_id}, /influencers/me/prices/approve-access/{brand_id}, /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/*/*, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, , /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**, /api/v1/tiktok-profile, /api/v1/tiktok-profile/**, /api/v1/snapchat-profile, /api/v1/snapchat-profile/**, /api/v1/podcasts-profile, /api/v1/podcasts-profile/**
+            - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
+        - id: profilesManagerBrands
+          uri: http://profiles
+          predicates:
+            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
+        - id: profiles-brand
+          uri: http://profiles
+          predicates:
+            - Path=  /api/v1/me/platforms, /api/v1/me/platforms/all, /api/v1/influencers/me/hide/profile, /api/v1/influencers/me/show/profile, /api/v1/brands/me, /api/v1/brands/me/support, /api/v1/influencers/me/show-price-list, /api/v1/influencers/me/hide-price-list, /api/v1/influencers/*/make-trusted, /api/v1/influencers/*/make-un-trusted 
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
+          metadata:
+            auth-roles:
+              - brand
+        - id: profilePrices
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/influencers/*/prices
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathPricesFilter
+        - id: profiles-admin
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/influencers/*
+            - Method=PATCH
+          metadata:
+            auth-roles:
+              - influencers-admin
         - id: social-media-adapter
           uri: http://social-media-adapter
           predicates:
-            - Path=/api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/social-media-adapter/api-doc
+            - Path=/api/v1/influencers/me/*/followers-count, /api/v1/influencers/me/*/user-id, /api/v1/social-media-adapter/api-doc
             - Method=POST,GET
           filters:
             - AddPrincipalToPathFilter
@@ -24,26 +63,48 @@ spring:
         - id: descriptions
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/*/*/description
+            - Path= /api/v1/*/*/description 
             - Method=GET,PUT,PATCH
           filters:
             - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: campaign-manager
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/comments/**, /api/v1/brief-influencers, /api/v1/brief-influencers/**, /api/v1/brief-influencers/search/**, /api/v1/briefs/**, /api/v1/briefs, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**, /api/v1/pitches, /api/v1/pitches/**, /api/v1/pitches/search/**, /api/v1/drafts/**, /api/v1/campaign-manager/api-doc
+            - Path= /api/v1/page-for-influencers-mood, /api/v1/page-for-influencers-mood/**, /api/v1/comparison-of-influencers, /api/v1/comments/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/*/fill-the-brief/**, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**, /api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**
+        - id: campaign-manager-brand
+          uri: http://campaign-manager
+          predicates:
+            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/*/is-portfolio-visible
+            - Method=GET,PUT,PATCH
+          metadata:
+            auth-roles:
+              - brand
+        - id: campaign-manager-invoice
+          uri: http://campaign-manager
+          predicates:
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create
+            - Method=GET,POST, PUT
+          filters:
+            - AddPrincipalToPathFilter
+        - id: influencer-portfolio
+          uri: http://campaign-manager
+          predicates:
+            - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*
+            - Method=GET,POST,PUT
+          filters:
+            - AddPrincipalToPathFilter
         - id: campaignsPrincipal
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/commands/me/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
-            - Method=POST,GET
+            - Path= /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**,  /api/v1/campaign-instagram-post, /api/v1/campaign-instagram-post/**, /api/v1/brand-billing-info, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
+            - Method=POST,GET, PUT, PATCH
           filters:
             - AddPrincipalToPathFilter
         - id: getEntitiesProfiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/brands/**
-            - Method=GET
+            - Path=/api/v1/brands/**, /api/v1/credits, /api/v1/credits/**
+            - Method=POST,GET, PUT, PATCH
         - id: getEntitiesCampaigns
           uri: http://campaign-manager
           predicates:
@@ -59,5 +120,24 @@ spring:
             - Path=/v3/api-docs/**
           filters:
             - RewritePath=/v3/api-docs/(?<path>.*), /api/v1//$\{path}/api-doc
+        - id: notification-service
+          uri: http://notification-service
+          predicates:
+            - Path= /api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc
+            - Method=POST, GET
+        - id: notification-chat
+          uri: http://notification-service
+          predicates:
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete,  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, 
+            - Method=POST
+          filters:
+            - AddPrincipalChatToPathFilter
+        - id: notification-service-me
+          uri: http://notification-service
+          predicates:
+            - Path= /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
+            - Method=POST, GET
+          filters:
+            - AddPrincipalToPathFilter
 keycloak-client:
-  server-url: https://authentication.theinfluencers.com/auth
+  server-url: https://authentication-dev.theinfluencers.com/auth

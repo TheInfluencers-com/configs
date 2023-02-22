@@ -1,13 +1,17 @@
-spring.servlet.multipart.max-file-size: 1MB
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
 amazon:
-  accessKey: '{cipher}a739bca9a5fa16da49bd3276949991ecaae07738def9f649fbe8a32fa1a6e61a2cdf4e72494d57a2eb7b69c1d3768871'
-  secretKey: '{cipher}5531abaea0696a2314ebed966f99c3931226ad2ef11e28fe39dac9c731a51256b00c4dd6db71da6fd22b58c1909e282ed2c4f2ae38c6328b2a8690989c12f048'
-  bucketName: influencers-multimedia-manager
+  accessKey: '{cipher}0c86cc7bd3f45eee7497fba64e26e06388d881ab646f719e2ab1aa90b1eb40b9ae2014040ace2f968712c1980cfecc51'
+  secretKey: '{cipher}14517e673e5a9fa034b42cc86e6f23aef2d2fdd138698d07db3697d049ff00648102b7e6f77567c5d482882b275167e3633391d0bcba02aa8045331e31d9be06'
+  bucketName: influencers-dev-multimedia-manager
   region: eu-north-1
 springdoc.api-docs.path: /api/v1/multimedia/api-doc
 management.endpoints.web.exposure.include: '*'
 logging.level:
-  com.agenatech: INFO
+  com.agenatech: DEBUG
 health:
   config:
     enabled: false

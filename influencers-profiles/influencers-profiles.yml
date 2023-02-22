@@ -10,7 +10,7 @@ spring:
   jpa:
     properties:
       hibernate:
-        generate_statistics: false
+        generate_statistics: true
         cache:
           use_second_level_cache: false
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
@@ -30,6 +30,15 @@ external-hal-links:
     briefRequests: /api/v1/briefs/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
     brandCampaigns: /api/v1/campaigns/search/by-brand{?brandId,lifecycleStatus,page,size,sort}
     pitchRequests: /api/v1/pitches/search/by-brand-lcs{?brandId,lifecycleStatus,page,size,sort}
+campaigns:
+  url: http://localhost:8086
+notifications:
+  url: http://localhost:9095
+  push-url: /api/v1/notifications
+  type-url: /api/v1/notifications/{id}/change-type
+  support-email: "hello@theinfluencers.com"
+  email-templates:
+    support-template: "d-1fa1c40919e3412fae2e22e8ece535a0"
 management:
   endpoints:
     web:
@@ -41,6 +50,5 @@ health:
     enabled: false
 logging:
   level:
-    com.agenatech: INFO
-
-
+    com.agenatech: DEBUG
+spring.jackson.serialization.FAIL_ON_EMPTY_BEANS: false
