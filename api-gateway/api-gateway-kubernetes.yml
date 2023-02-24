@@ -140,4 +140,4 @@ spring:
           filters:
             - AddPrincipalToPathFilter
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
