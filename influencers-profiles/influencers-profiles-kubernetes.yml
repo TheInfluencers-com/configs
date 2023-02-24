@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://database-dev.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/profiles?ssl=false
+    url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/profiles?ssl=false
     username: postgres
-    password: '{cipher}80b992ff695be1018a75becadb9f8ec4d87de4d2efe673d7ed31a921d9ffe4f4508c794ed487b7268c0b410e8cc8f8ab'
+    password: '{cipher}3ee95f8ed1d0eb56ba38c25255992a529c0a077155cea262c5318275b0a932db48c1cbdec9acedbb3de22b27b33609ac'
 notifications:
   url: http://notification-service
   push-url: /api/v1/notifications
