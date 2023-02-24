@@ -14,7 +14,7 @@ spring:
         enable_lazy_load_no_trans: true
         generate_statistics: false
     show-sql: false
-
+amazon:
   accessKey: '{cipher}0a3113b95def76a420a172f647ddaee28379a50427e9157a76c66eac32cf1c0dcc9bf1d8947d9089bd1d14be6a6a9364'
   secretKey: '{cipher}69536958c74e3abea382381ad09ce841af3b7ee9fba1c3cd453d218c942656b07e3d3a51d0d23c4a7a002415c0d97dd186836b4969f85829fd7c4edaba546f90'
   bucketName: influencers-dev-multimedia-manager
