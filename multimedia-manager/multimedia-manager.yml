@@ -4,8 +4,8 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
 amazon:
-  accessKey: '{cipher}0a3113b95def76a420a172f647ddaee28379a50427e9157a76c66eac32cf1c0dcc9bf1d8947d9089bd1d14be6a6a9364'
-  secretKey: '{cipher}69536958c74e3abea382381ad09ce841af3b7ee9fba1c3cd453d218c942656b07e3d3a51d0d23c4a7a002415c0d97dd186836b4969f85829fd7c4edaba546f90'
+  accessKey: '{cipher}8c3d05f29375e8cb179bff84c5d12432bbb6b66cb02bc687b753b96a49b36d9336480d2ea19c509532e3715b98c6cb15'
+  secretKey: '{cipher}7bbf979805c8f81d7a27a5a693359cce3b5ff016b3a32720dba2994999bc6650603a9b51115250aaa6a297bfea3912575b303fd430f114b4b765e1025d7dc252'
   bucketName: influencers-dev-multimedia-manager
   region: eu-north-1
 springdoc.api-docs.path: /api/v1/multimedia/api-doc
