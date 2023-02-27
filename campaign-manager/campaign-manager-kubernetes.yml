@@ -7,7 +7,7 @@ spring:
     datasource:
     url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/campaign-manager?ssl=false
     username: postgres
-    password: '{cipher}3ee95f8ed1d0eb56ba38c25255992a529c0a077155cea262c5318275b0a932db48c1cbdec9acedbb3de22b27b33609ac'
+    password: '{cipher}b41da68bbefacb9256bfa2b4c5d7aa96bd350716018ae08edcb837d232f985c015215920e5944ae491803fe4bcc70f15'
   jpa:
     properties:
       hibernate:
