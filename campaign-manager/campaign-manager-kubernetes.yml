@@ -24,3 +24,5 @@ profiles:
   url: http://profiles
 notifications:
   url: http://notification-service
+  email-url: /api/v1/emails
+  push-url: /api/v1/notifications
