@@ -8,9 +8,9 @@ spring:
       FAIL_ON_EMPTY_BEANS: false
   data.rest.base-path: api/v1
   datasource:
-    url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/campaign-manager?ssl=false
-    username: postgres
-    password: '{cipher}b41da68bbefacb9256bfa2b4c5d7aa96bd350716018ae08edcb837d232f985c015215920e5944ae491803fe4bcc70f15'
+    url: jdbc:postgresql://localhost:5432/campaign-manager?ssl=false
+    username: user
+    password: password
   jpa:
     properties:
       hibernate:
