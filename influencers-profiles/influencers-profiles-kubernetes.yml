@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/profiles?ssl=false
     username: postgres
-    password: '{cipher}f3ba777ea70a02829cf054c68c79ff3c022e2b68ff8faf538a88ff63a640def3dbb0e29e32f62d5317090fa1b03cd647'
+    password: '{cipher}53ccea0fb52eaf64fc85eac0e7390607ddaf183e081ef2316e9831cdc154769184774d9f2db0f83b78cd9f1020701bb7'
 notifications:
   url: http://notification-service
   push-url: /api/v1/notifications
