@@ -163,7 +163,7 @@ spring:
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
-            - Path= /api/v1/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
+            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
