@@ -53,7 +53,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers
+            - Path=  /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -70,7 +70,7 @@ spring:
         - id: profilePrices
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/*/prices
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
@@ -120,7 +120,7 @@ spring:
         - id: campaign-manager-invoice
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**, /api/v1/campaign-instagram-post/**, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create
+            - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**, /api/v1/campaign-instagram-post/**, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter
             - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
@@ -163,7 +163,7 @@ spring:
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
-            - Path= /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
+            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter

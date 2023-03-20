@@ -19,7 +19,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://profiles
           predicates:
-            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers
+            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -36,7 +36,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
@@ -74,7 +74,7 @@ spring:
         - id: campaign-manager-brand
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/*/is-portfolio-visible
+            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/*/is-portfolio-visible, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter
             - Method=GET,PUT,PATCH
           metadata:
             auth-roles:
@@ -96,7 +96,7 @@ spring:
         - id: campaignsPrincipal
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**,  /api/v1/campaign-instagram-post, /api/v1/campaign-instagram-post/**, /api/v1/brand-billing-info, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
+            - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**,  /api/v1/campaign-instagram-post, /api/v1/campaign-instagram-post/**, /api/v1/brand-billing-info, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**
             - Method=POST,GET, PUT, PATCH
           filters:
             - AddPrincipalToPathFilter
@@ -135,7 +135,7 @@ spring:
         - id: notification-service-me
           uri: http://notification-service
           predicates:
-            - Path= /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
+            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
