@@ -33,6 +33,13 @@ spring:
           metadata:
             auth-roles:
               - brand
+        - id: profiles-block
+          uri: http://profiles
+          predicates:
+            - Path= /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: profilePrices
           uri: http://profiles
           predicates:
