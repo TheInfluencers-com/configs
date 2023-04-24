@@ -39,7 +39,7 @@ notifications:
   support-email: "hello@theinfluencers.com"
   email-templates:
     support-template: "d-1fa1c40919e3412fae2e22e8ece535a0"
-  admin-emails: "liubomyr.nych@beleven.dev"
+  admin-emails: ["gladiy.pavlo@gmail.com", "liubomyr.nych@gmail.com"]
 management:
   endpoints:
     web:
