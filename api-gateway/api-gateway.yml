@@ -89,6 +89,11 @@ spring:
           metadata:
             auth-roles:
               - influencers-admin
+        - id: profiles-strange-activity
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*,
+            - Method=GET,PUT,PUT
         - id: social-media-adapter
           uri: http://localhost:8087
           predicates:
