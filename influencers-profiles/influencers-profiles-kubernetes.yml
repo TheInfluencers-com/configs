@@ -7,6 +7,6 @@ notifications:
   url: http://notification-service
   push-url: /api/v1/notifications
   type-url: /api/v1/notifications/{id}/change-type
-  admin-emails: ["gladiy.pavlo@gmail.com", "liubomyr.nych@gmail.com"]
+  admin-emails: "[gladiy.pavlo@gmail.com, liubomyr.nych@gmail.com]"
 campaigns:
   url: http://campaign-manager
