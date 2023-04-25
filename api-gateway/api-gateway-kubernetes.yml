@@ -153,5 +153,12 @@ spring:
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
+        - id: pin-unpin-chats-and-messages
+          uri: http://notification-service
+          predicates:
+            - Path=/api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
 keycloak-client:
   server-url: https://authentication-dev.theinfluencers.com/auth

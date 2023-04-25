@@ -181,6 +181,13 @@ spring:
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
+        - id: pin-unpin-chats-and-messages
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
   security:
     oauth2:
       client:
