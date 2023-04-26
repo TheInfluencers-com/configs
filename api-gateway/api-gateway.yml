@@ -60,13 +60,20 @@ spring:
         - id: profiles-brand
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/brands/me, /api/v1/influencers/me/hide/profile, /api/v1/influencers/me/show/profile, /api/v1/brands/me/support, /api/v1/influencers/me/show-price-list, /api/v1/influencers/me/hide-price-list, /api/v1/influencers/*/make-trusted, /api/v1/influencers/*/make-un-trusted
+            - Path=/api/v1/brands/me, /api/v1/influencers/me/hide/profile, /api/v1/influencers/me/show/profile, /api/v1/brands/me/support, /api/v1/influencers/me/show-price-list, /api/v1/influencers/me/hide-price-list, /api/v1/influencers/*/make-trusted, /api/v1/influencers/*/make-un-trusted, /api/v1/brands/delete/me, /api/v1/influencers/delete/me
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
           metadata:
             auth-roles:
               - brand
+        - id: profiles-block
+          uri: http://8080
+          predicates:
+            - Path= /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*
+            - Method=POST,GET,PUT,PATCH,DELETE
+          filters:
+            - AddPrincipalToPathFilter
         - id: profilePrices
           uri: http://localhost:8080
           predicates:
@@ -82,6 +89,13 @@ spring:
           metadata:
             auth-roles:
               - influencers-admin
+        - id: profiles-strange-activity
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*,
+            - Method=GET,PUT
+          filters:
+            - AddPrincipalToPathFilter
         - id: social-media-adapter
           uri: http://localhost:8087
           predicates:
@@ -156,7 +170,7 @@ spring:
         - id: notification-chat
           uri: http://localhost:9095
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete,  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, 
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, 
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
@@ -165,6 +179,13 @@ spring:
           predicates:
             - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
             - Method=POST, GET
+          filters:
+            - AddPrincipalToPathFilter
+        - id: pin-unpin-chats-and-messages
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
+            - Method=POST
           filters:
             - AddPrincipalToPathFilter
   security:
