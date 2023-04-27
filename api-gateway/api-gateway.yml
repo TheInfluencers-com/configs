@@ -92,8 +92,8 @@ spring:
         - id: profiles-strange-activity
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*, /api/v1/brands/me/check-if-follow/influencers/*, /api/v1/brands/me/find-following-influencers-list
-            - Method=GET,PUT
+            - Path=/api/v1/brands/me/find-following-influencers-list, /api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*
+            - Method=POST,GET,PUT
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
