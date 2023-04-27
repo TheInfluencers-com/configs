@@ -43,7 +43,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
@@ -149,16 +149,9 @@ spring:
         - id: notification-service-me
           uri: http://notification-service
           predicates:
-            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**
+            - Path=/api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**, /api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
-        - id: pin-unpin-chats-and-messages
-          uri: http://notification-service
-          predicates:
-            - Path=/api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
-            - Method=POST
-          filters:
-            - AddPrincipalToPathFilter
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
