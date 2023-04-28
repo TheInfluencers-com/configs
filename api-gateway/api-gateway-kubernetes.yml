@@ -58,8 +58,8 @@ spring:
         - id: profiles-strange-activity
           uri: http://profiles
           predicates:
-            - Path=/api/v1/brands/me/find-following-influencers-list, /api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*
-            - Method=POST,GET,PUT
+            - Path=/api/v1/brands/me/find-following-influencers-list, /api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*, /api/v1/influencers/subscription-changes
+            - Method=POST,GET,PUT,PUT,POST
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
