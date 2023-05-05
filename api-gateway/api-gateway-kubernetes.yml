@@ -58,8 +58,8 @@ spring:
         - id: profiles-strange-activity
           uri: http://profiles
           predicates:
-            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*,
-            - Method=GET,PUT
+            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*, /api/v1/influencers/subscription-changes, /api/v1/brands/me/check-if-follow/influencers/*
+            - Method=GET,PUT,PUT,POST,GET
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
@@ -142,7 +142,7 @@ spring:
         - id: notification-chat
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, 
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, /api/v1/chat/user/me/find/brands/{name}
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter

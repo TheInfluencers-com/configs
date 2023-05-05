@@ -92,8 +92,8 @@ spring:
         - id: profiles-strange-activity
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*,
-            - Method=GET,PUT
+            - Path=/api/v1/brands/me/following-influencers, /api/v1/brands/me/unfollow/influencer/*, /api/v1/brands/me/follow/influencer/*, /api/v1/influencers/subscription-changes, /api/v1/brands/me/check-if-follow/influencers/*
+            - Method=GET,PUT,PUT,POST,GET
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
@@ -170,10 +170,17 @@ spring:
         - id: notification-chat
           uri: http://localhost:9095
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, 
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
+        - id: search-chats
+          uri: http://localhost:9095
+          predicates:
+            - Path=/api/v1/chat/user/find/brands
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
@@ -203,7 +210,7 @@ spring:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 keycloak-client:
-  server-url: https://authentication.theinfluencers.com/auth
+  server-url: https://authentication-dev.theinfluencers.com/auth
   realm: influencers-com
 management:
   endpoints:
