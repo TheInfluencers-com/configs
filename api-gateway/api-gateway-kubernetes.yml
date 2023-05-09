@@ -141,17 +141,11 @@ spring:
             - Method=POST, GET
         - id: notification-chat
           uri: http://notification-service
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**
+          predicates:
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, /api/v1/chat/user/me/find/brands/{name}
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
-        - id: search-chats
-          uri: http://notification-service
-          predicates:
-            - Path=/api/v1/chat/user/find/brands
-            - Method=POST
-          filters:
-            - AddPrincipalToPathFilter
         - id: test-now
           uri: http://profiles
           predicates:
@@ -167,4 +161,4 @@ spring:
           filters:
             - AddPrincipalToPathFilter
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
