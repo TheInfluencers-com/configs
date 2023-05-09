@@ -152,6 +152,13 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
+        - id: test-now
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/user/check/brands
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
         - id: notification-service-me
           uri: http://notification-service
           predicates:
