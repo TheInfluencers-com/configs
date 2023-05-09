@@ -142,10 +142,17 @@ spring:
         - id: notification-chat
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, /api/v1/chat/user/me/find/brands/*
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, /api/v1/chat/user/me/find/brands/{name}
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
+        - id: test-now
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/user/check/brands
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
         - id: notification-service-me
           uri: http://notification-service
           predicates:
