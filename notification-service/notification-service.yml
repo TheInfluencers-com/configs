@@ -22,6 +22,7 @@ profiles:
   url: http://localhost:8080
   brand-info-by-name: /api/v1/brands/by-name/{name}
   chech-if-user-blocked: /api/v1/{id}/check-if-block/{user_id}
+find-chats: api/v1/user/find/brands
 app:
   email:
     enabled: true
