@@ -153,5 +153,12 @@ spring:
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
+        - id: blocked-users
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/brands/me/blocked-and-blocking-influencers
+            - Method=GET
+          filters:
+            - AddPrincipalToPathFilter
 keycloak-client:
   server-url: https://authentication-dev.theinfluencers.com/auth
