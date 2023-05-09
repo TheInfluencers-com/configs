@@ -181,6 +181,13 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
+        - id: test-now
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/user/check/brands
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
