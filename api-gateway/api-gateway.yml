@@ -174,20 +174,6 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
-        - id: search-chats
-          uri: http://localhost:9095
-          predicates:
-            - Path=/api/v1/chat/user/find/brands
-            - Method=POST
-          filters:
-            - AddPrincipalToPathFilter
-        - id: test-now
-          uri: http://localhost:8080
-          predicates:
-            - Path=/api/v1/user/check/brands
-            - Method=POST
-          filters:
-            - AddPrincipalToPathFilter
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
@@ -217,7 +203,7 @@ spring:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
   realm: influencers-com
 management:
   endpoints:
