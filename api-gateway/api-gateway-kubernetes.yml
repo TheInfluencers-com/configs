@@ -146,7 +146,7 @@ spring:
           filters:
             - AddPrincipalChatToPathFilter
         - id: search-chats
-          uri: http://localhost:9095
+          uri: http://notification-service
           predicates:
             - Path=/api/v1/chat/user/find/brands
             - Method=POST
