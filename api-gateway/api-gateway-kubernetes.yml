@@ -146,6 +146,13 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
+        - id: chats-search
+          uri: http://notification-service
+          predicates:
+            - Path=/api/v1/chat/user/me/find/brands/* 
+            - Method=POST
+          filters:
+            - AddPrincipalChatToPathFilter 
         - id: notification-service-me
           uri: http://notification-service
           predicates:
