@@ -179,8 +179,6 @@ spring:
           predicates:
             - Path=/api/v1/chat/no
             - Method=GET
-          filters:
-            - AddPrincipalChatToPathFilter
         - id: chats-search
           uri: http://localhost:9095
           predicates:
