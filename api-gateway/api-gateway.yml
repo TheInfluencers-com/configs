@@ -174,11 +174,6 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalChatToPathFilter
-        - id: fix-chat
-          uri: http://localhost:9095
-          predicates:
-            - Path=/api/v1/chat/no
-            - Method=GET
         - id: chats-search
           uri: http://localhost:9095
           predicates:
