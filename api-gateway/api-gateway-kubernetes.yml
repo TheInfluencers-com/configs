@@ -153,11 +153,6 @@ spring:
             - Method=POST,GET
           filters:
             - AddPrincipalChatToPathFilter
-        - id: fix-chat
-          uri: http://notification-service
-          predicates:
-            - Path=/api/v1/chat/no
-            - Method=GET
         - id: notification-service-me
           uri: http://notification-service
           predicates:
