@@ -5,15 +5,15 @@ spring:
         - id: profilesCurrency
           uri: http://profiles
           predicates: 
-            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, currency/influencer/me/convert/*/*, /api/v1/currency/**
+            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profilesPrincipal
           uri: http://profiles
           predicates:
-            - Path= /api/v1/information-about-each-platform, /api/v1/credits/influencer/me/accepted, /api/v1/credits/brand/me/accepted, /api/v1/credits/influencer/me/sent-or-accepted, /api/v1/credits/brand/me/sent-or-accepted, /api/v1/mood/me/today, /api/v1/mood/**, /api/v1/influencers/*/make-trusted,/api/v1/influencers/*/make-un-trusted, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /influencers/me/prices/decline-access/{brand_id}, /influencers/me/prices/approve-access/{brand_id}, /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/*/*, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, , /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**, /api/v1/tiktok-profile, /api/v1/tiktok-profile/**, /api/v1/snapchat-profile, /api/v1/snapchat-profile/**, /api/v1/podcasts-profile, /api/v1/podcasts-profile/**
-            - Method=POST,GET,PUT,PATCH,DELETE
+            - Path= /api/v1/brands/by-name/*, /api/v1/information-about-each-platform, /api/v1/credits/influencer/me/accepted, /api/v1/credits/brand/me/accepted, /api/v1/credits/influencer/me/sent-or-accepted, /api/v1/credits/brand/me/sent-or-accepted, /api/v1/mood/me/today, /api/v1/mood/**, /api/v1/influencers/*/make-trusted,/api/v1/influencers/*/make-un-trusted, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /influencers/me/prices/decline-access/{brand_id}, /influencers/me/prices/approve-access/{brand_id}, /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/brands/me, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/*/*, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, , /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**, /api/v1/tiktok-profile, /api/v1/tiktok-profile/**, /api/v1/snapchat-profile, /api/v1/snapchat-profile/**, /api/v1/podcasts-profile, /api/v1/podcasts-profile/**
+            - Method=GET,POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profilesManagerBrands
@@ -36,8 +36,8 @@ spring:
         - id: profiles-block
           uri: http://profiles
           predicates:
-            - Path= /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*
-            - Method=POST,GET,PUT,PATCH,DELETE
+            - Path=/api/v1/brands/me/blocked-and-blocking-influencers, /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*
+            - Method=GET,POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profilePrices
@@ -142,8 +142,15 @@ spring:
         - id: notification-chat
           uri: http://notification-service
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, /api/v1/chat/user/me/find/brands/{name}
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/chat/**, /api/v1/chat/user/me/find/brands/*
             - Method=POST
+          filters:
+            - AddPrincipalChatToPathFilter
+        - id: chats-search
+          uri: http://notification-service
+          predicates:
+            - Path=/api/v1/chat/user/me/find/brands/{name}, /api/v1/chat/find/brand/*
+            - Method=POST,GET
           filters:
             - AddPrincipalChatToPathFilter
         - id: notification-service-me
@@ -154,4 +161,4 @@ spring:
           filters:
             - AddPrincipalToPathFilter
 keycloak-client:
-  server-url: https://authentication.theinfluencers.com/auth
+  server-url: https://authentication-dev.theinfluencers.com/auth
