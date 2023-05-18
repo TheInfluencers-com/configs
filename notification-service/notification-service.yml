@@ -20,7 +20,7 @@ spring:
     api-key: test
 profiles:
   url: http://localhost:8080
-  brand-info-by-name: /api/v1/brands/search/by-name/?{name}
+  brand-info-by-name: /api/v1/brands/by-name/{name}
   check-is-user-blocked: /api/v1/{firstId}/is-user-blocked/{secondId}
 app:
   email:
