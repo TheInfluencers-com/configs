@@ -4,9 +4,9 @@ spring:
   application:
     name: notification-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/notifications?ssl=false
-    username: user
-    password: password
+    url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/notifications?ssl=false
+    username: postgres
+    password: '{cipher}b41da68bbefacb9256bfa2b4c5d7aa96bd350716018ae08edcb837d232f985c015215920e5944ae491803fe4bcc70f15'
     driver-class-name: org.postgresql.Driver
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -20,8 +20,7 @@ spring:
     api-key: test
 profiles:
   url: http://localhost:8080
-  brand-info-by-name: /api/v1/brands/search/by-name/?{name}
-  check-is-user-blocked: /api/v1/{firstId}/is-user-blocked/{secondId}
+  brand-info-by-name: /api/v1/brands/by-name/{name}
 app:
   email:
     enabled: true
