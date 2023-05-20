@@ -45,6 +45,7 @@ profiles:
   influencers-search-by-ids-url: /api/v1/influencers/search/by-ids?ids={idsList}
   influencers-search-by-name-url: /api/v1/influencers/search/by-name
   influencer-mood-info: /api/v1/mood/for-three-days/{id}
+  check-is-user-blocked: /api/v1/{firstId}/is-user-blocked/{secondId}
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
