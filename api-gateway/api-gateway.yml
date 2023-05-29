@@ -124,8 +124,8 @@ spring:
         - id: campaign-manager-brand
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year, /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/brand-billing-info, /api/v1/brand-billing-info/**,  /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/campaigns/**, /api/v1/home-page/me/**, /api/v1/brief-publish-date/**,  /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/brand-budget/**, /api/v1/*/is-portfolio-visible
-            - Method=GET,POST,GET,PUT,PATCH, POST
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/brand-billing-info, /api/v1/brand-billing-info/**,  /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/campaigns/**, /api/v1/home-page/me/**, /api/v1/brief-publish-date/**,  /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/brand-budget/**, /api/v1/*/is-portfolio-visible, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year
+            - Method=GET,PUT,PATCH, POST
           filters:
             - AddPrincipalToPathFilter
           metadata:
