@@ -181,6 +181,11 @@ spring:
             - Method=POST, GET
           filters:
             - AddPrincipalToPathFilter
+        - id: key clock
+          uri: https://authentication-dev.theinfluencers.com
+          predicates:
+            - Path= /auth/admin/realms/influencers-com/users/{user_id}/reset-password
+            - Method=PUT
   security:
     oauth2:
       client:
