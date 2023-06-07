@@ -158,5 +158,12 @@ spring:
           predicates:
             - Path= /auth/admin/realms/influencers-com/users/{user_id}/reset-password
             - Method=PUT
+        - id: new-password
+          uri: http://profiles
+          predicates:
+            - Path=/api/v1/me/get-new-password
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
 keycloak-client:
   server-url: https://authentication-dev.theinfluencers.com/auth
