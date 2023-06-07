@@ -161,7 +161,7 @@ spring:
         - id: new-password
           uri: http://profiles
           predicates:
-            - Path=/api/v1/me/get-new-password
+            - Path=/api/v1/me/change-user-password
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
