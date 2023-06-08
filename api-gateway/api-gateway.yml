@@ -189,7 +189,7 @@ spring:
         - id: new-password
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/me/change-user-password
+            - Path=/api/v1/me/change-user-password, /api/v1/chats/{chatId}/users/me/send-messages
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
