@@ -36,6 +36,8 @@ notifications:
   url: http://localhost:9095
   push-url: /api/v1/notifications
   type-url: /api/v1/notifications/{id}/change-type
+  send-message: /api/v1/chat/{chat_id}/user/{user_id}/message/send
+  get-interlocutor: /api/v1/chat/{chat_id}/user/{user_id}/get-interlocutor
   support-email: "hello@theinfluencers.com"
   email-templates:
     support-template: "d-1fa1c40919e3412fae2e22e8ece535a0"
