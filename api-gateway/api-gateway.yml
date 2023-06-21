@@ -177,8 +177,8 @@ spring:
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
-            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**, /api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
-            - Method=POST, GET
+            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**, /api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me, /api/v1/me/delete-device/{deviceToken}
+            - Method=POST, GET, DELETE 
           filters:
             - AddPrincipalToPathFilter
         - id: key clock
