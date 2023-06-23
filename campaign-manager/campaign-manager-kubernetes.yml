@@ -26,3 +26,4 @@ notifications:
   url: http://notification-service
   email-url: /api/v1/emails
   push-url: /api/v1/notifications
+  approve-request: /api/v1/notifications/{requestId}/approve-campaign-request
