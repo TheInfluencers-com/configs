@@ -168,5 +168,6 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
+            
 keycloak-client:
   server-url: https://authentication-dev.theinfluencers.com/auth
