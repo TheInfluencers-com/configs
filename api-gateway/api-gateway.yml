@@ -39,15 +39,15 @@ spring:
         - id: profilesCurrency
           uri: http://localhost:8080
           predicates: 
-            - Path= /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, currency/influencer/me/convert/*/*, /api/v1/currency/** 
+            - Path= /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/** 
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profilesPrincipal
           uri: http://localhost:8080
           predicates:
-            - Path= /api/v1/information-about-each-platform, /api/v1/credits/influencer/me/accepted, /api/v1/credits/brand/me/accepted, /api/v1/credits/influencer/me/sent-or-accepted, /api/v1/credits/brand/me/sent-or-accepted, /api/v1/mood/me/today, /api/v1/mood/**, /api/v1/influencers/*/make-trusted,/api/v1/influencers/*/make-un-trusted,  /influencers/me/prices/decline-access/{brand_id}, /influencers/me/prices/approve-access/{brand_id}, /api/v1/me/platforms, /api/v1/me/platforms/all, /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/**, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**, /api/v1/tiktok-profile, /api/v1/tiktok-profile/**, /api/v1/snapchat-profile, /api/v1/snapchat-profile/**, /api/v1/podcasts-profile, /api/v1/podcasts-profile/**
-            - Method=POST,GET,PUT,PATCH,DELETE
+            - Path= /api/v1/inlfuencers/me/brands/by-name/{name}, /api/v1/information-about-each-platform, /api/v1/credits/influencer/me/accepted, /api/v1/credits/brand/me/accepted, /api/v1/credits/influencer/me/sent-or-accepted, /api/v1/credits/brand/me/sent-or-accepted, /api/v1/mood/me/today, /api/v1/mood/**, /api/v1/influencers/*/make-trusted,/api/v1/influencers/*/make-un-trusted,  /influencers/me/prices/decline-access/{brand_id}, /influencers/me/prices/approve-access/{brand_id}, /api/v1/me/platforms, /api/v1/me/platforms/all, /api/v1/access-request/**, /api/v1/access-request, /api/v1/brands/remove-premium, /api/v1/brands/make-premium, /api/v1/influencers/remove-premium, /api/v1/influencers/make-premium, /api/v1/influencers/me/access-request, /api/v1/influencers/me, /api/v1/influencers/me/followersCount, /api/v1/influencers/me/externalReferences, /api/v1/influencers/me/prices, /api/v1/influencers/me/prices/**, /api/v1/influencers/me/support, /api/v1/influencers/me/deals, /api/v1/instagram-profile, /api/v1/instagram-profile/**, /api/v1/youtube-profile, /api/v1/youtube-profile/**, /api/v1/tiktok-profile, /api/v1/tiktok-profile/**, /api/v1/snapchat-profile, /api/v1/snapchat-profile/**, /api/v1/podcasts-profile, /api/v1/podcasts-profile/**
+            - Method=GET,POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profilesManagerBrands
@@ -70,8 +70,8 @@ spring:
         - id: profiles-block
           uri: http://8080
           predicates:
-            - Path= /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*
-            - Method=POST,GET,PUT,PATCH,DELETE
+            - Path=/api/v1/brands/me/blocked-and-blocking-influencers, /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*, /api/v1/{firstId}/is-user-blocked/{secondId}
+            - Method=GET,POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: profilePrices
@@ -111,7 +111,8 @@ spring:
         - id: campaign-manager
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/page-for-influencers-mood, /api/v1/page-for-influencers-mood/**, /api/v1/comparison-of-influencers, /api/v1/comments/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**,/api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**
+            - Path= /api/v1/page-for-influencers-mood, /api/v1/page-for-influencers-mood/**, /api/v1/comparison-of-influencers, /api/v1/comments/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**,/api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**, /api/v1/campaigns/*/drafts-info, /api/v1/me/campaigns/{campaignId}/approve/{draftId}, /api/v1/me/campaigns/{campaignId}/approve-draft
+            - Method=GET,PUT,PATCH, POST, DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: influencer-portfolio
@@ -124,7 +125,7 @@ spring:
         - id: campaign-manager-brand
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/brand-billing-info, /api/v1/brand-billing-info/**,  /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/campaigns/**, /api/v1/home-page/me/**, /api/v1/brief-publish-date/**,  /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/brand-budget/**, /api/v1/*/is-portfolio-visible
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/brand-billing-info, /api/v1/brand-billing-info/**,  /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/campaigns/**, /api/v1/home-page/me/**, /api/v1/brief-publish-date/**,  /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/brand-budget/**, /api/v1/*/is-portfolio-visible, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year
             - Method=GET,PUT,PATCH, POST
           filters:
             - AddPrincipalToPathFilter
@@ -170,15 +171,15 @@ spring:
         - id: notification-chat
           uri: http://localhost:9095
           predicates:
-            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/me/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, /api/v1/chat/user/{user_id}/find/brands/{name}
-            - Method=POST
+            - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/{user_id}/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, /api/v1/chat/user/{user_id}/find/brands/{name}, /api/v1/chat/{chat_id}/user/{user_id}/get-interlocutor,  /api/v1/chat/{chat_id}/user/me/mute-chat, /api/v1/chat/{chat_id}/user/me/unmute-chat
+            - Method=POST, GET
           filters:
-            - AddPrincipalChatToPathFilter
+            - AddPrincipalChatToPathFilter  
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
-            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**, /api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me
-            - Method=POST, GET
+            - Path= /api/v1/chat/generate-token/user/me, /api/v1/notifications/*/close-feedback, /api/v1/notifications/me/device-token,  /api/v1/notifications/me/notification, /api/v1/notifications/notification/mark_read, /api/v1/notifications, /api/v1/notifications/**, /api/v1/chat/{chat_id}/user/me/message/{message_id}/pin/{pinForAll}, /api/v1/chat/{chat_id}/user/me/message/{message_id}/unpin, /api/v1/chat/{chat_id}/pin/user/me, /api/v1/chat/{chat_id}/unpin/user/me, /api/v1/me/delete-device/{deviceToken}, /api/v1/notifications/{requestId}/approve-campaign-request
+            - Method=POST, GET, DELETE, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: key clock
@@ -186,6 +187,13 @@ spring:
           predicates:
             - Path= /auth/admin/realms/influencers-com/users/{user_id}/reset-password
             - Method=PUT
+        - id: new-password
+          uri: http://localhost:8080
+          predicates:
+            - Path=/api/v1/me/change-user-password, /api/v1/chats/{chatId}/users/{userId}/send-messages
+            - Method=POST
+          filters:
+            - AddPrincipalToPathFilter
   security:
     oauth2:
       client:
