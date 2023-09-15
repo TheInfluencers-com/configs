@@ -99,21 +99,21 @@ spring:
         - id: campaign-manager-invoice
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/me/campaigns-info
             - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: influencer-portfolio
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*
+            - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*, /api/v1/advertising-types
             - Method=GET,POST,PUT
           filters:
             - AddPrincipalToPathFilter
         - id: campaignsPrincipal
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**,  /api/v1/campaign-instagram-post, /api/v1/campaign-instagram-post/**, /api/v1/brand-billing-info, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year
+            - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**,  /api/v1/campaign-instagram-post, /api/v1/campaign-instagram-post/**, /api/v1/brand-billing-info, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year, /api/v1/commands/me/generate-contract, /api/v1/commands/me/campaigns/{campaignId}/edit-contract, /api/v1/commands/me/send-contract/{contractId}
             - Method=POST,GET, PUT, PATCH
           filters:
             - AddPrincipalToPathFilter
@@ -168,5 +168,6 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
+            
 keycloak-client:
   server-url: https://authentication.theinfluencers.com/auth

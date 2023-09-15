@@ -7,6 +7,8 @@ notifications:
   url: http://notification-service
   push-url: /api/v1/notifications
   type-url: /api/v1/notifications/{id}/change-type
+  send-message: /api/v1/chat/{chat_id}/user/{user_id}/message/send
+  get-interlocutor: /api/v1/chat/{chat_id}/user/{user_id}/get-interlocutor
   admin-emails: "[gladiy.pavlo@gmail.com, liubomyr.nych@gmail.com]"
 campaigns:
   url: http://campaign-manager
