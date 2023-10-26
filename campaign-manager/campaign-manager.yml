@@ -51,6 +51,7 @@ notifications:
   email-url: /api/v1/emails
   push-url: /api/v1/notifications
   approve-request: /api/v1/notifications/{requestId}/approve-campaign-request
+  remove-notifications: /api/v1/notifications/{userId}/remove-notifications/{campaignId}/types/{type}
   admin-email: "gladiypavlo@gmail.com"
   email-templates:
     new-comment-template: "d-1baa6de59a3a439e9fb5b5a6bc8bfde8"
