@@ -23,6 +23,7 @@ amazon:
 profiles:
   url: http://profiles
   brands-by-name: /api/v1/brands/by-name/{name}
+  confirmed-influencers: /api/v1/confirmed-influencers
 notifications:
   url: http://notification-service
   email-url: /api/v1/emails
