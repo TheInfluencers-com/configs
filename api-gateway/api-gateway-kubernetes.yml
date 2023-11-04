@@ -5,7 +5,7 @@ spring:
         - id: profilesCurrency
           uri: http://profiles
           predicates: 
-            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**
+            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**, /api/v1/confirmed-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
