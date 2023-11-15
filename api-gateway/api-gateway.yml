@@ -216,7 +216,7 @@ spring:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 keycloak-client:
-  server-url: https://authentication.theinfluencers.com/auth
+  server-url: https://authentication-dev.theinfluencers.com/auth
   realm: influencers-com
 management:
   endpoints:
