@@ -84,7 +84,7 @@ spring:
         - id: profiles-admin
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/*, /api/v1/brands/**, /api/v1/credits, /api/v1/credits/**
+            - Path=/api/v1/influencers/*, /api/v1/brands/**, /api/v1/credits, /api/v1/credits/**, 
             - Method=PATCH
           metadata:
             auth-roles:
@@ -106,7 +106,7 @@ spring:
         - id: profiles
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline
+            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline
             - Method=GET, PUT
         - id: campaign-manager
           uri: http://localhost:8086
@@ -216,7 +216,7 @@ spring:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
   realm: influencers-com
 management:
   endpoints:

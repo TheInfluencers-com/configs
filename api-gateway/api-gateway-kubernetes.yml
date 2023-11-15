@@ -120,7 +120,7 @@ spring:
         - id: getEntitiesProfiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/brands/**, /api/v1/credits, /api/v1/credits/**
+            - Path=/api/v1/brands/**, /api/v1/credits, /api/v1/credits/**, /api/v1/confirmed-influencers
             - Method=POST,GET, PUT, PATCH
         - id: getEntitiesCampaigns
           uri: http://campaign-manager
@@ -170,4 +170,4 @@ spring:
             - AddPrincipalToPathFilter
             
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
