@@ -5,9 +5,9 @@ spring:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
   datasource:
-    url: jdbc:postgresql://database.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/campaign-manager?ssl=false
+    url: jdbc:postgresql://database-dev.cusdxsftolnc.eu-north-1.rds.amazonaws.com:5432/campaign-manager?ssl=false
     username: postgres
-    password: '{cipher}b41da68bbefacb9256bfa2b4c5d7aa96bd350716018ae08edcb837d232f985c015215920e5944ae491803fe4bcc70f15'
+    password: '{cipher}80b992ff695be1018a75becadb9f8ec4d87de4d2efe673d7ed31a921d9ffe4f4508c794ed487b7268c0b410e8cc8f8ab'
   jpa:
     properties:
       hibernate:
@@ -15,8 +15,8 @@ spring:
         generate_statistics: false
     show-sql: false
 amazon:
-  accessKey: '{cipher}d645ad8426a13662cdb31e1456bb2e02cb0e7a60f56b1aae2058f293c81494305b8128a41c60cac6b42c2fad72e99ad2'
-  secretKey: '{cipher}8436da9a30ee66b24c05cea274ce30ef4f1e6a5583c272c6ab42a90961fd8794819693e2814597b3edd4f22d35065c2dfa86dc2804fbf32dd87680227febedc8'
+  accessKey: '{cipher}0c86cc7bd3f45eee7497fba64e26e06388d881ab646f719e2ab1aa90b1eb40b9ae2014040ace2f968712c1980cfecc51'
+  secretKey: '{cipher}14517e673e5a9fa034b42cc86e6f23aef2d2fdd138698d07db3697d049ff00648102b7e6f77567c5d482882b275167e3633391d0bcba02aa8045331e31d9be06'
   bucketName: influencers-dev-multimedia-manager
   region: eu-north-1
 
