@@ -106,7 +106,7 @@ spring:
         - id: profiles
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline
+            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts
             - Method=GET, PUT
         - id: campaign-manager
           uri: http://localhost:8086
