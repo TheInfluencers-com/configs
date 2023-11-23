@@ -72,7 +72,7 @@ spring:
         - id: profiles
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/**, /api/v1/influencers, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/ratings/search/**, /api/v1/profiles/api-doc, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline
+            - Path=/api/v1/influencers/**, /api/v1/influencers, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/ratings/search/**, /api/v1/profiles/api-doc, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts
             - Method=GET, PUT
         - id: descriptions
           uri: http://campaign-manager
