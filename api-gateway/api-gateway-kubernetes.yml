@@ -91,7 +91,7 @@ spring:
         - id: campaign-manager-brand
           uri: http://campaign-manager
           predicates:
-            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/*/is-portfolio-visible, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter, /api/v1/commands/me/decline-campaign-contract/{campaignId}
+            - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/*/is-portfolio-visible, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter, /api/v1/commands/me/decline-campaign-contract/{campaignId}, /api/v1/commands/me/add-contract-to-campaign/{campaignId}
             - Method=GET,PUT,PATCH
           metadata:
             auth-roles:
