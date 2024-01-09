@@ -7,13 +7,13 @@ spring:
       job-store-type: jdbc
       jdbc:
         initialize-schema: always
-        properties:
-          org:
-            quartz:
+      properties:
+        org:
+          quartz:
             jobStore:
-            dataSource: quartzDataSource
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+              dataSource: quartzDataSource
+              class: org.quartz.impl.jdbcjobstore.JobStoreTX
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
