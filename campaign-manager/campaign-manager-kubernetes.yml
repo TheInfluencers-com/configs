@@ -9,9 +9,9 @@ spring:
         org:
           quartz:
             jobStore:
-              dataSource: quartzDataSource
-              class: org.quartz.impl.jdbcjobstore.JobStoreTX
               driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            dataSource: quartzDataSource
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
