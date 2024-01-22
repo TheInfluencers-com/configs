@@ -1,6 +1,17 @@
 server:
   port: 8080
 spring:
+  quartz:
+      job-store-type: jdbc
+      jdbc:
+        initialize-schema: always
+      properties:
+        org:
+          quartz:
+            jobStore:
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+            dataSource: quartzDataSource
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
