@@ -40,3 +40,4 @@ notifications:
   email-url: /api/v1/emails
   push-url: /api/v1/notifications
   approve-request: /api/v1/notifications/{requestId}/approve-campaign-request
+  is-exists-approve-campaign-request: /api/v1/notifications/{requestId}/is-exists-approve-campaign-push
