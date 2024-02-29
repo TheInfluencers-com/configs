@@ -166,8 +166,8 @@ spring:
         - id: notification-service
           uri: http://localhost:9095
           predicates:
-            - Path=/api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/notifications/choose-influencer-mood/{userId}, /api/v1/notifications/{userId}/remove-notifications/{campaignId}/types/{type}
-            - Method=POST, DELETE
+            - Path=/api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/notifications/choose-influencer-mood/{userId}, /api/v1/notifications/{userId}/remove-notifications/{campaignId}/types/{type}, /api/v1/{requestId}/is-exists-approve-campaign-push
+            - Method=POST, GET, DELETE
         - id: notification-chat
           uri: http://localhost:9095
           predicates:
