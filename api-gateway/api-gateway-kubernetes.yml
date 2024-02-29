@@ -140,7 +140,7 @@ spring:
         - id: notification-service
           uri: http://notification-service
           predicates:
-            - Path= /api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc
+            - Path= /api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/notifications/{requestId}/is-exists-approve-campaign-push
             - Method=POST, GET
         - id: notification-chat
           uri: http://notification-service
