@@ -53,6 +53,8 @@ health:
   config:
     enabled: false
 logging:
+  file:
+    name: logs/app.log
   level:
     com.agenatech: DEBUG
 spring.jackson.serialization.FAIL_ON_EMPTY_BEANS: false
