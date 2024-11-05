@@ -125,7 +125,7 @@ spring:
         - id: campaign-manager-brand
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/brand-billing-info, /api/v1/brand-billing-info/**,  /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/campaigns/**, /api/v1/home-page/me/**, /api/v1/brief-publish-date/**,  /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/brand-budget/**, /api/v1/*/is-portfolio-visible, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year, /api/v1/commands/me/generate-contract, /api/v1/commands/me/campaigns/{campaignId}/edit-contract, /api/v1/commands/me/send-contract/{contractId}, /api/v1/brands/me/get-brief-info/{briefId}
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/brand-billing-info, /api/v1/brand-billing-info/**,  /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/campaigns/**, /api/v1/home-page/me/**, /api/v1/brief-publish-date/**,  /api/v1/campaigns/*/boost/*/*/*, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/brand-budget/**, /api/v1/*/is-portfolio-visible, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year, /api/v1/commands/me/generate-contract, /api/v1/commands/me/campaigns/{campaignId}/edit-contract, /api/v1/commands/me/send-contract/{contractId}, /api/v1/brands/me/get-brief-info/{briefId},  /api/v1/campaign-logs**, /api/v1/campaign-logs/logs, /api/v1/campaign-logs/enable, /api/v1/campaign-logs/clear, /api/v1/campaign-logs/disable
             - Method=GET,PUT,PATCH, POST
           filters:
             - AddPrincipalToPathFilter
@@ -135,14 +135,14 @@ spring:
         - id: campaign-manager-invoice
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**, /api/v1/campaign-instagram-post/**, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter, /api/v1/me/campaigns-info
+            - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**, /api/v1/campaign-instagram-post/**, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter, /api/v1/me/campaigns-info,  /api/v1/campaign-logs**, /api/v1/campaign-logs/logs, /api/v1/campaign-logs/enable, /api/v1/campaign-logs/clear, /api/v1/campaign-logs/disable
             - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: campaignsPrincipal
           uri: http://localhost:8086
           predicates:
-            - Path=/api/v1/commands/me/**, /api/v1/me/update-brand-billing-info, /api/v1/campaign-logs/**
+            - Path=/api/v1/commands/me/**, /api/v1/me/update-brand-billing-info,  /api/v1/campaign-logs**, /api/v1/campaign-logs/logs, /api/v1/campaign-logs/enable, /api/v1/campaign-logs/clear, /api/v1/campaign-logs/disable
             - Method=POST, PUT
           filters:
             - AddPrincipalToPathFilter
