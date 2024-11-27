@@ -157,7 +157,7 @@ spring:
           filters:
             - AddPrincipalToPathFilter
         - id: key clock
-          uri: https://authentication-dev.theinfluencers.com
+          uri: https://authentication.theinfluencers.com
           predicates:
             - Path= /auth/admin/realms/influencers-com/users/{user_id}/reset-password
             - Method=PUT
@@ -170,4 +170,4 @@ spring:
             - AddPrincipalToPathFilter
             
 keycloak-client:
-  server-url: https://authentication-dev.theinfluencers.com/auth
+  server-url: https://authentication.theinfluencers.com/auth
