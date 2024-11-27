@@ -4,16 +4,16 @@ server:
   forward-headers-strategy: framework
 spring:
   quartz:
-      job-store-type: jdbc
-      jdbc:
-        initialize-schema: always
-      properties:
-        org:
-          quartz:
-            jobStore:
-              driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
-            dataSource: quartzDataSource
-            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+    job-store-type: jdbc
+    jdbc:
+      initialize-schema: always
+    properties:
+      org:
+        quartz:
+          jobStore:
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.PostgreSQLDelegate
+          dataSource: quartzDataSource
+          class: org.quartz.impl.jdbcjobstore.JobStoreTX
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
@@ -64,6 +64,7 @@ notifications:
   push-url: /api/v1/notifications
   approve-request: /api/v1/notifications/{requestId}/approve-campaign-request
   remove-notifications: /api/v1/notifications/{userId}/remove-notifications/{campaignId}/types/{type}
+  is-exists-approve-campaign-request: /api/v1/notifications/{requestId}/is-exists-approve-campaign-push
   admin-email: "gladiypavlo@gmail.com"
   email-templates:
     new-comment-template: "d-1baa6de59a3a439e9fb5b5a6bc8bfde8"
@@ -81,9 +82,7 @@ health:
     enabled: false
 springdoc.api-docs.path: /api/v1/campaign-manager/api-doc
 logging:
+  file:
+    name: logs/app.log
   level:
     com.agenatech: DEBUG
-
-
-
-

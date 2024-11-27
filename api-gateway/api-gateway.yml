@@ -39,7 +39,7 @@ spring:
         - id: profilesCurrency
           uri: http://localhost:8080
           predicates: 
-            - Path= /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/** 
+            - Path= /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**, /api/v1/currency/convert/from/{from_currency_id}/to/{to_currency_id}/{amount}
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -106,19 +106,19 @@ spring:
         - id: profiles
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts
-            - Method=GET, PUT
+            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts, /api/v1/influencers/logs/**, /api/v1/profiles/logs**
+            - Method=GET, PUT, POST, DELETE
         - id: campaign-manager
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/page-for-influencers-mood, /api/v1/page-for-influencers-mood/**, /api/v1/comparison-of-influencers, /api/v1/comments/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/me/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**,/api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**, /api/v1/campaigns/*/drafts-info, /api/v1/me/campaigns/{campaignId}/approve/{draftId}, /api/v1/me/campaigns/{campaignId}/approve-draft, /api/v1/briefs/by-dates-price, /api/v1/me/campaigns/{campaignId}/review-drafts, /api/v1/testing-method
+            - Path= /api/v1/campaigns/brands/**, /api/v1/page-for-influencers-mood, /api/v1/page-for-influencers-mood/**, /api/v1/comparison-of-influencers, /api/v1/comments/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/me/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**,/api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**, /api/v1/campaigns/*/drafts-info, /api/v1/me/campaigns/{campaignId}/approve/{draftId}, /api/v1/me/campaigns/{campaignId}/approve-draft, /api/v1/briefs/by-dates-price, /api/v1/me/campaigns/{campaignId}/review-drafts, /api/v1/testing-method, /api/v1/me/brand-billing-info, /api/v1/me/accepted-requests, /api/v1/commands/me/skip-contract/{campaignId}, /api/v1/commands/me/add-contract-to-campaign/{campaignId}, /api/v1/commands/me/decline-campaign-contract/{campaignId}, /api/v1/commands/brands/**, /api/v1/commands/brands/me/go-to-next-step/{step}/{campaignId}
             - Method=GET,PUT,PATCH, POST, DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: influencer-portfolio
           uri: http://localhost:8086
           predicates:
-            - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*, /api/v1/advertising-types /api/v1/commands/me/notification/upload-draft/{campaignId}, /api/v1/commands/me/notification/upload-statistics/{campaignId}, /api/v1/me/search-requests, /api/v1/me/search-public-requests, /api/v1/me/get-drafts-information/{campaignId}
+            - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*, /api/v1/advertising-types /api/v1/commands/me/notification/upload-draft/{campaignId}, /api/v1/commands/me/notification/upload-statistics/{campaignId}, /api/v1/me/search-requests, /api/v1/me/search-public-requests, /api/v1/me/get-drafts-information/{campaignId}, /api/v1/commands/me/publish-drafts/{campaignId}, /api/v1/commands/me/go-to-next-step/{step}/{campaignId}
             - Method=GET,POST,PUT
           filters:
             - AddPrincipalToPathFilter
@@ -142,8 +142,8 @@ spring:
         - id: campaignsPrincipal
           uri: http://localhost:8086
           predicates:
-            - Path=/api/v1/commands/me/**
-            - Method=POST
+            - Path=/api/v1/commands/me/**, /api/v1/me/update-brand-billing-info
+            - Method=POST, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: descriptions
@@ -166,8 +166,8 @@ spring:
         - id: notification-service
           uri: http://localhost:9095
           predicates:
-            - Path=/api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/notifications/choose-influencer-mood/{userId}, /api/v1/notifications/{userId}/remove-notifications/{campaignId}/types/{type}
-            - Method=POST, DELETE
+            - Path=/api/v1/notifications, /api/v1/emails, /api/v1/notification-service/api-doc, /api/v1/notifications/choose-influencer-mood/{userId}, /api/v1/notifications/{userId}/remove-notifications/{campaignId}/types/{type}, /api/v1/notifications/{requestId}/is-exists-approve-campaign-push
+            - Method=POST, GET, DELETE
         - id: notification-chat
           uri: http://localhost:9095
           predicates:
@@ -216,7 +216,7 @@ spring:
         jwt:
           jwk-set-uri: ${keycloak-client.server-url}/realms/${keycloak-client.realm}/protocol/openid-connect/certs
 keycloak-client:
-  server-url: https://authentication.theinfluencers.com/auth
+  server-url: https://authentication-dev.theinfluencers.com/auth
   realm: influencers-com
 management:
   endpoints:
