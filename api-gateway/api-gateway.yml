@@ -142,8 +142,8 @@ spring:
         - id: campaignsPrincipal
           uri: http://localhost:8086
           predicates:
-            - Path=/api/v1/commands/me/**, /api/v1/me/update-brand-billing-info, /api/v1/clog
-            - Method=POST, PUT, GET
+            - Path=/api/v1/commands/me/**, /api/v1/me/update-brand-billing-info
+            - Method=POST, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: descriptions
