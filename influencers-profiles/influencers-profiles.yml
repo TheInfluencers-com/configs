@@ -63,4 +63,4 @@ keycloak:
   url: https://authentication.theinfluencers.com
   client:
     id: admin-cli
-    secret: '{cipher}2a027748b88aea1048bf4a545f8258cbfd34a96cc9386572afa300fbaf4b561a7e965ef2d3e3250a37ce9356b9ce262397864f955e8cdbb381d4cf8cab7bdb6f'
+    secret: '{cipher}9d552e317f16b9e3305b33eca67cc7b7c14450c7c7a4f5b69a6baa6cfc2b3bbce812f5d092aaff539cbb25993c2d7c728959844b59d03c8cc6d612b2a28402d9'
