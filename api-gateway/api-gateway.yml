@@ -38,7 +38,7 @@ spring:
       routes:
         - id: profilesCurrency
           uri: http://localhost:8080
-          predicates: 
+          predicates:
             - Path= /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**, /api/v1/currency/convert/from/{from_currency_id}/to/{to_currency_id}/{amount}
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
@@ -84,7 +84,7 @@ spring:
         - id: profiles-admin
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/*, /api/v1/brands/**, /api/v1/credits, /api/v1/credits/**, 
+            - Path=/api/v1/influencers/*, /api/v1/brands/**, /api/v1/credits, /api/v1/credits/**,
             - Method=PATCH
           metadata:
             auth-roles:
@@ -106,7 +106,7 @@ spring:
         - id: profiles
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts, /api/v1/influencers/logs/**, /api/v1/profiles/logs**
+            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts, /api/v1/influencers/logs/**, /api/v1/profiles/logs**, , /api/v1/influencers-list
             - Method=GET, PUT, POST, DELETE
         - id: campaign-manager
           uri: http://localhost:8086
@@ -174,7 +174,7 @@ spring:
             - Path=/api/v1/chat, /api/v1/chat/{chat_id}/user/{user_id}/message/send, /api/v1/chat/{chat_id}/user/me/message/{message_id}/update, /api/v1/chat/{chat_id}/user/me/message/{message_id}/delete/{for_every_body},  /api/v1/chat/{chat_id}/user/me/read/all, /api/v1/platforms/all/*, /api/v1/chat/**, /api/v1/chat/user/{user_id}/find/brands/{name}, /api/v1/chat/{chat_id}/user/{user_id}/get-interlocutor,  /api/v1/chat/{chat_id}/user/me/mute-chat, /api/v1/chat/{chat_id}/user/me/unmute-chat
             - Method=POST, GET
           filters:
-            - AddPrincipalChatToPathFilter  
+            - AddPrincipalChatToPathFilter
         - id: notification-service-me
           uri: http://localhost:9095
           predicates:
