@@ -53,7 +53,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/list-influencers
+            - Path=  /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/me/list-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -77,7 +77,7 @@ spring:
         - id: profilePrices
           uri: http://localhost:8080
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/list-influencers
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
@@ -106,7 +106,7 @@ spring:
         - id: profiles
           uri: http://localhost:8080
           predicates:
-            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts, /api/v1/influencers/logs/**, /api/v1/profiles/logs**, /api/v1/list-influencers
+            - Path=  /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v2/chat/user, /api/v1/chat/user, /api/v1/chat/user/**, /api/v1/influencers/*/*, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/profiles/api-doc, /api/v1/confirmed-influencers, /api/v1/new-influencers, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts, /api/v1/influencers/logs/**, /api/v1/profiles/logs**, /api/v1/me/list-influencers
             - Method=GET, PUT, POST, DELETE
         - id: campaign-manager
           uri: http://localhost:8086
