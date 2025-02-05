@@ -34,6 +34,7 @@ campaigns:
   url: http://localhost:8086
   user-info-bulk: /api/v1/user-info-bulk
   recent-brands: /api/v1/campaigns/search/recent-brands
+  portfolio: /api/v1/campaigns/search/portfolio
 notifications:
   url: http://localhost:9095
   push-url: /api/v1/notifications
