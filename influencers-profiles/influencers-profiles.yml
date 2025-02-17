@@ -36,6 +36,7 @@ campaigns:
   recent-brands: /api/v1/campaigns/search/recent-brands
   portfolio: /api/v1/campaigns/search/portfolio
   by-ids: /api/v1/campaigns/search/by-ids
+  count-by-influencer: /api/v1/campaigns/search/by-ids
 notifications:
   url: http://localhost:9095
   push-url: /api/v1/notifications
