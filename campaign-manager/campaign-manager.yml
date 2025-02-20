@@ -61,7 +61,7 @@ profiles:
 platforms:
   instagram:
     webhook:
-      verify-token: '007084182c5b7f2a19c575a9e6848364310fd8b0f15644b447bc0eac00a8e0b9'
+      verify-token: '{cipher}007084182c5b7f2a19c575a9e6848364310fd8b0f15644b447bc0eac00a8e0b9'
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
