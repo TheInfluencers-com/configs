@@ -199,8 +199,6 @@ spring:
           uri: http://profiles
           predicates:
             - Path=/webhooks/**
-          filters:
-            - RewritePath=/webhooks/(?<path>.*), /webhooks/${path}
   security:
     oauth2:
       client:
