@@ -198,9 +198,9 @@ spring:
         - id: open-endpoints
           uri: http://profiles
           predicates:
-            - Path=/api/v1/webhooks/**
+            - Path=/webhooks/**
           filters:
-            - RewritePath=/api/v1/(?<path>.*), /api/v1/${path}
+            - RewritePath=/webhooks/(?<path>.*), /webhooks/${path}
   security:
     oauth2:
       client:
