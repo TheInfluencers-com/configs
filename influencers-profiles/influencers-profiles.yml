@@ -10,7 +10,6 @@ spring:
   jpa:
     properties:
       hibernate:
-        generate_statistics: true
         cache:
           use_second_level_cache: false
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
@@ -61,6 +60,26 @@ logging:
   file:
     name: logs/app.log
   level:
+    root: INFO
+    org:
+      springframework:
+        web: DEBUG
+        security: DEBUG
+        data.jpa:
+          repository: DEBUG
+          rest:
+            core: DEBUG
+            webmvc: DEBUG
+      hibernate:
+        info: info
+        SQL: debug
+        orm.jdbc.bind: trace
+        stat: debug
+        SQL_SLOW: info
+        cache: debug
+        type.descriptor.sql.BasicBinder: trace
+  pattern:
+    console: "%magenta(%d{HH:mm:ss.SSS}) %green(%5p) --- %cyan(%c{0}) : %msg%n%ex{5}"
     com.agenatech: DEBUG
 spring.jackson.serialization.FAIL_ON_EMPTY_BEANS: false
 
