@@ -168,6 +168,11 @@ spring:
             - Method=POST
           filters:
             - AddPrincipalToPathFilter
+        - id: open-endpoints
+          uri: http://profiles
+          predicates:
+            - Path=/webhooks/**
+            - Method=POST, GET
 
 keycloak-client:
   server-url: https://authentication.theinfluencers.com/auth

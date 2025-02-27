@@ -196,7 +196,7 @@ spring:
           filters:
             - AddPrincipalToPathFilter
         - id: open-endpoints
-          uri: http://profiles
+          uri: http://locahost:8080
           predicates:
             - Path=/webhooks/**
             - Method=POST, GET
