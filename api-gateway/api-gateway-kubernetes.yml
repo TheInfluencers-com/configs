@@ -19,7 +19,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://profiles
           predicates:
-            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews, /api/v1/webhooks/**
+            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -43,7 +43,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews, /api/v1/webhooks/**
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
@@ -99,7 +99,7 @@ spring:
         - id: campaign-manager-invoice
           uri: http://campaign-manager
           predicates:
-            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/platforms, /api/v1/platforms/**, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/me/campaigns-info, /api/v1/commands/me/notification/upload-draft/{campaignId}, /api/v1/commands/me/notification/upload-statistics/{campaignId}
+            - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/me/campaigns-info, /api/v1/commands/me/notification/upload-draft/{campaignId}, /api/v1/commands/me/notification/upload-statistics/{campaignId}
             - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
