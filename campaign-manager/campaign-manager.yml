@@ -58,6 +58,10 @@ profiles:
   influencer-mood-info: /api/v1/mood/for-three-days/{id}
   check-is-user-blocked: /api/v1/{firstId}/is-user-blocked/{secondId}
   confirmed-influencers: /api/v1/confirmed-influencers
+platforms:
+  instagram:
+    webhook:
+      verify-token: '{cipher}007084182c5b7f2a19c575a9e6848364310fd8b0f15644b447bc0eac00a8e0b9'
 notifications:
   url: http://localhost:9095
   email-url: /api/v1/emails
