@@ -69,11 +69,3 @@ keycloak:
   client:
     id: admin-cli
     secret: '{cipher}9d552e317f16b9e3305b33eca67cc7b7c14450c7c7a4f5b69a6baa6cfc2b3bbce812f5d092aaff539cbb25993c2d7c728959844b59d03c8cc6d612b2a28402d9'
-platforms:
-  instagram:
-    url: https://graph.facebook.com/v22.0
-    client:
-      id: 1796303811161347
-      secret: '{cipher}ee842fd742aaf8452d9e4941b30a2ad36a10a51bffc3411c465cfbe55e245c6d2b53cd6961a8eaff9ddec2ec5bf3f1f593e79d4e9b704ebc70dcef4d5881b98b'
-    webhook:
-      verify-token: '{cipher}007084182c5b7f2a19c575a9e6848364310fd8b0f15644b447bc0eac00a8e0b9'
