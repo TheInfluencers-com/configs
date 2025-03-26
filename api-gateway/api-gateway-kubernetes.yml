@@ -75,21 +75,21 @@ spring:
             - Path=/api/v1/influencers/**, /api/v1/influencers, /api/v1/influencers/search/**, /api/v1/brands/search/**, /api/v1/ratings/search/**, /api/v1/profiles/api-doc, /api/v1/new-brands, /api/v1/all-brands, /api/v1/brands/{brandId}/app-access/approve, /api/v1/brands/{brandId}/app-access/decline, /api/v1/{influencerId}/recent-influencer-posts
             - Method=GET, PUT
         - id: descriptions
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path= /api/v1/*/*/description
             - Method=GET,PUT,PATCH
           filters:
             - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: campaign-manager
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path=/api/v1/clog/**, /api/v1/page-for-influencers-mood, /api/v1/page-for-influencers-mood/**, /api/v1/comparison-of-influencers, /api/v1/comments/**, /api/v1/fill-the-brief, /api/v1/fill-the-brief/**, /api/v1/brand-invoice/**, /api/v1/me/approve-brief-step/**, /api/v1/edit-campaign-brief/**, /api/v1/*/fill-the-brief, /api/v1/*/fill-the-brief/**, /api/v1/brief-influencers, /api/v1/brief-influencers/search/**, /api/v1/briefs, /api/v1/briefs/**, /api/v1/briefs/search/**, /api/v1/campaigns/search/**, /api/v1/pitchBrands/**, /api/v1/pitchBrands/search/**, /api/v1/pitches, /api/v1/pitches/**, /api/v1/ratings/search/**, /api/v1/campaign-manager/api-doc, /api/v1/notifications-configs-brand, /api/v1/notifications-configs-brand/**, /api/v1/notifications-configs-influencer, /api/v1/notifications-configs-influencer/**, /api/v1/campaigns/*/drafts-info, /api/v1/me/campaigns/{campaignId}/approve/{draftId}, /api/v1/me/campaigns/{campaignId}/approve-draft, /api/v1/briefs/by-dates-price, /api/v1/me/campaigns/{campaignId}/review-drafts, /api/v1/testing-method, /api/v1/me/brand-billing-info, /api/v1/me/accepted-requests, /api/v1/commands/me/skip-contract/{campaignId}, /api/v1/commands/me/add-contract-to-campaign/{campaignId}, /api/v1/commands/me/decline-campaign-contract/{campaignId}, /api/v1/commands/brands/me/go-to-next-step/{step}/{campaignId}, /api/v1/commands/me/pause-campaign/{campaignId}, /api/v1/commands/me/unpause-campaign/{campaignId}, /api/v1/user-info-bulk, /api/v1/content-types/**
             - Method=GET,PUT,PATCH, POST, DELETE
           filters:
             - AddPrincipalToPathFilter
         - id: campaign-manager-brand
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path=/api/v1/campaigns/**, /api/v1/campaigns/*/boost/*/*/*, /api/v1/*/is-portfolio-visible, /api/v1/home-page/find-new-campaigns-by-dates, /api/v1/home-page/find-camaigns-by-title, /api/v1/home-page/campaign-filter
             - Method=GET,PUT,PATCH
@@ -97,21 +97,21 @@ spring:
             auth-roles:
               - brand
         - id: campaign-manager-invoice
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path= /api/v1/statistic/me/campaign/*/*/*, /api/v1/statistic/me/invoice/*/*/*, /api/v1/statistic/me/pitch/*/*/*, /api/v1/statistic/me/brief/*/*/*, /api/v1/platforms, /api/v1/platforms/**, /api/v1/instagram/webhook, /api/v1/commands/influencers/me/count-budget-goal, /api/v1/advertising-pitch-type, /api/v1/advertising-pitch-type/**, /api/v1/invoice/influencer/me/**, /api/v1/influencer-invoice/**, /api/v1/invoice/**, /api/v1/billing-info/**, /api/v1/invoice/influencer/me/create, /api/v1/invoice/influencer/me/express/create, /api/v1/me/campaigns-info, /api/v1/commands/me/notification/upload-draft/{campaignId}, /api/v1/commands/me/notification/upload-statistics/{campaignId}
             - Method=GET,POST, PUT
           filters:
             - AddPrincipalToPathFilter
         - id: influencer-portfolio
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path= /api/v1/campaign-statistic-access/**, /api/v1/campaign-statistic-access, /api/v1/campaign/statistic/access, /api/v1/me/campaign/statistic/access/*/approve, /api/v1/me/campaign/statistic/access/*/decline, /api/v1/portfolio/*, /api/v1/me/portfolio/campaign/*, /api/v1/advertising-types, /api/v1/me/search-requests, /api/v1/me/search-public-requests, /api/v1/me/get-drafts-information/{campaignId}, /api/v1/commands/me/publish-drafts/{campaignId}, /api/v1/commands/me/go-to-next-step/{step}/{campaignId}
             - Method=GET,POST,PUT
           filters:
             - AddPrincipalToPathFilter
         - id: campaignsPrincipal
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path= /api/v1/home-page/administrator, /api/v1/campaign-youtube, /api/v1/campaign-youtube/**, /api/v1/campaign-instagram-story, /api/v1/campaign-instagram-story/**,  /api/v1/campaign-instagram-post, /api/v1/campaign-instagram-post/**, /api/v1/brand-billing-info, /api/v1/me/brand-budget, /api/v1/brand-budget/**, /api/v1/advertising-type, /api/v1/advertising-type/**, /api/v1/brand-billing-info/**, /api/v1/commands/me/**, /api/v1/home-page/me/**, /api/v1/brand-invoice/me/filter, /api/v1/brand-invoice/me/filter/**,  /api/v1/brief-publish-date/**, /api/v1/commands/influencers/me/**, /api/v1/commands/brands/me/**, /api/v1/count/me/**, /api/v1/me/brand-budget-year/*, /api/v1/brand-budget-year, /api/v1/commands/me/generate-contract, /api/v1/commands/me/campaigns/{campaignId}/edit-contract, /api/v1/commands/me/send-contract/{contractId}, /api/v1/brands/me/get-brief-info/{briefId}, /api/v1/me/update-brand-billing-info
             - Method=POST,GET, PUT, PATCH
@@ -123,7 +123,7 @@ spring:
             - Path=/api/v1/brands/**, /api/v1/credits, /api/v1/credits/**, /api/v1/confirmed-influencers
             - Method=POST,GET, PUT, PATCH
         - id: getEntitiesCampaigns
-          uri: http://campaign-manager
+          uri: http://profiles
           predicates:
             - Path=/api/v1/campaigns/**
             - Method=GET
