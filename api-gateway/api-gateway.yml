@@ -68,7 +68,7 @@ spring:
             auth-roles:
               - brand
         - id: profiles-block
-          uri: http://8080
+          uri: http://localhost:8080
           predicates:
             - Path=/api/v1/brands/me/blocked-and-blocking-influencers, /api/v1/me/block-influencer/*, /api/v1/me/block-brand/*, /api/v1/me/unblock-influencer/*, /api/v1/me/unblock-brand/*, /api/v1/me/blocked-brands, /api/v1/me/blocked-influencers, /api/v1/me/is-influencer-blocked/*, /api/v1/me/is-brand-blocked/*, /api/v1/{firstId}/is-user-blocked/{secondId}
             - Method=GET,POST,GET,PUT,PATCH,DELETE
