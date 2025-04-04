@@ -97,7 +97,7 @@ spring:
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
-          uri: http://localhost:8087
+          uri: http://localhost:8080
           predicates:
             - Path=/api/v1/influencers/me/*/followers-count, /api/v1/influencers/me/*/user-id, /api/v1/social-media-adapter/api-doc
             - Method=POST,GET
