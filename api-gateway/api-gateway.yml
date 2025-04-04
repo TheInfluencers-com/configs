@@ -154,7 +154,7 @@ spring:
           filters:
             - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: multimedia
-          uri: http://localhost:8097
+          uri: http://localhost:8080
           predicates:
             - Path=/api/v1/multimedia, /api/v1/multimedia-manager/**
         - id: openapi
