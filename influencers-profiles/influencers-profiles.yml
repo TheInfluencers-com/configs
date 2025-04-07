@@ -89,9 +89,3 @@ platforms:
       secret: '{cipher}ee842fd742aaf8452d9e4941b30a2ad36a10a51bffc3411c465cfbe55e245c6d2b53cd6961a8eaff9ddec2ec5bf3f1f593e79d4e9b704ebc70dcef4d5881b98b'
     webhook:
       verify-token: '{cipher}007084182c5b7f2a19c575a9e6848364310fd8b0f15644b447bc0eac00a8e0b9'
-youtube.url: https://www.googleapis.com/youtube/v3
-instagram.url: https://graph.instagram.com/v13.0
-facebook.url: https://graph.facebook.com/v13.0
-auth:
-  url: http://localhost:8180
-  realm: influencers-com

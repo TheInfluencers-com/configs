@@ -97,7 +97,7 @@ spring:
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
-          uri: http://localhost:8080
+          uri: http://localhost:8087
           predicates:
             - Path=/api/v1/influencers/me/*/followers-count, /api/v1/influencers/me/*/user-id, /api/v1/social-media-adapter/api-doc
             - Method=POST,GET
@@ -154,7 +154,7 @@ spring:
           filters:
             - RewritePath=/api/v1/(?<entity>.*)/(?<path>.*)/description, /api/v1/description//$\{path}/
         - id: multimedia
-          uri: http://localhost:8080
+          uri: http://localhost:8097
           predicates:
             - Path=/api/v1/multimedia, /api/v1/multimedia-manager/**
         - id: openapi
