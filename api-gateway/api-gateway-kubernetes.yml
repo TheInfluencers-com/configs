@@ -128,7 +128,7 @@ spring:
             - Path=/api/v1/campaigns/**
             - Method=GET
         - id: multimedia
-          uri: http://multimedia-manager
+          uri: http://profiles
           predicates:
             - Path=/api/v1/multimedia, /api/v1/multimedia/**, /api/v1/multimedia-manager/**
         - id: openapi
