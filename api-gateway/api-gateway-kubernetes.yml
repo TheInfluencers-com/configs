@@ -19,7 +19,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://profiles
           predicates:
-            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
+            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/highest-graded-influencers /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -43,7 +43,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/highest-graded-influencers /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
