@@ -18,3 +18,6 @@ amazon:
   secretKey: '{cipher}14517e673e5a9fa034b42cc86e6f23aef2d2fdd138698d07db3697d049ff00648102b7e6f77567c5d482882b275167e3633391d0bcba02aa8045331e31d9be06'
   bucketName: influencers-dev-multimedia-manager
   region: eu-north-1
+auth:
+  url: https://authentication.theinfluencers.com/auth
+  realm: influencers-com
