@@ -5,7 +5,7 @@ spring:
         - id: profilesCurrency
           uri: http://profiles
           predicates:
-            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/top-brand, /api/v1/top-campaigns, /api/v1/highest-graded-influencers, /api/v1/campaigns/multi/by-brief/{briefId},/api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**, /api/v1/confirmed-influencers, /api/v1/currency/convert/from/{from_currency_id}/to/{to_currency_id}/{amount}
+            - Path= /api/v1/platforms/all/*, /api/v1/influencer/me/app-access/ready-to-check, /api/v1/influencer/*/app-access/approve, /api/v1/influencer/*/app-access/decline, /api/v1/new-influencers, /api/v1/influencer/*/app-access/request-changes, /api/v1/currency, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/influencer/me/convert/*/*, /api/v1/currency/**, /api/v1/confirmed-influencers, /api/v1/currency/convert/from/{from_currency_id}/to/{to_currency_id}/{amount}
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -19,7 +19,7 @@ spring:
         - id: profilesManagerBrands
           uri: http://profiles
           predicates:
-            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/highest-graded-influencers /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
+            - Path= /api/v1/manager/me/brands, /api/v1/manager/me/brand, /api/v1/brand/me/manager, /api/v1/brand/me/manager/approve/*, /api/v1/brand/me/manager/decline/*, /api/v1/brand/manager/empty, /api/v1/brand/me/manager, /api/v1/managers, /api/v1/top-influencers, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathFilter
@@ -43,7 +43,7 @@ spring:
         - id: profilePrices
           uri: http://profiles
           predicates:
-            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/highest-graded-influencers /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
+            - Path=/api/v1/influencers/*/prices, /api/v1/top-influencers, /api/v1/brands/delete/me, /api/v1/influencers/delete/me, /api/v1/me/list-influencers, /api/v1/influencer/{id}/overview, /api/v1/reviews
             - Method=POST,GET,PUT,PATCH,DELETE
           filters:
             - AddPrincipalToPathPricesFilter
@@ -63,7 +63,7 @@ spring:
           filters:
             - AddPrincipalToPathFilter
         - id: social-media-adapter
-          uri: http://profiles
+          uri: http://social-media-adapter
           predicates:
             - Path=/api/v1/influencers/me/*/followers-count, /api/v1/influencers/me/*/user-id, /api/v1/social-media-adapter/api-doc
             - Method=POST,GET
@@ -128,7 +128,7 @@ spring:
             - Path=/api/v1/campaigns/**
             - Method=GET
         - id: multimedia
-          uri: http://profiles
+          uri: http://multimedia-manager
           predicates:
             - Path=/api/v1/multimedia, /api/v1/multimedia/**, /api/v1/multimedia-manager/**
         - id: openapi
