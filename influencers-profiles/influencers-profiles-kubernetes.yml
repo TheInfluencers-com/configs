@@ -14,8 +14,8 @@ notifications:
 campaigns:
   url: http://campaign-manager
 amazon:
-  accessKey: '{cipher}d645ad8426a13662cdb31e1456bb2e02cb0e7a60f56b1aae2058f293c81494305b8128a41c60cac6b42c2fad72e99ad2'
-  secretKey: '{cipher}8436da9a30ee66b24c05cea274ce30ef4f1e6a5583c272c6ab42a90961fd8794819693e2814597b3edd4f22d35065c2dfa86dc2804fbf32dd87680227febedc8'
+  accessKey: '{cipher}e52a53eeafec63b1aa1838ee0d13175d7b095e803bd44dda713227c0dde73361e03198fcab22be51fd5db0b33c7c465a'
+  secretKey: '{cipher}dc6ca16822eb65084ce2d3558106a0cc59064568f02ee0d3aaec5ff6604664a139a01a7289f766d0b84dbef3b246a6119cbb91dfce2b8f56cc55a6a9c03c6407'
   bucketName: influencers-dev-multimedia-manager
   region: eu-north-1
 auth:
