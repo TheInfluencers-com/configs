@@ -8,9 +8,13 @@ spring:
     username: user
     password: password
   jpa:
+    open-in-view: true
     properties:
       hibernate:
-        generate_statistics: true
+        properties:
+          hibernate.format_sql: true
+          hibernate.highlight_sql: true
+        generate_statistics: false
         cache:
           use_second_level_cache: false
     database-platform: org.hibernate.dialect.PostgreSQL9Dialect
@@ -74,6 +78,9 @@ logging:
     name: logs/app.log
   level:
     com.agenatech: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.orm.jdbc.bind: TRACE
 spring.jackson.serialization.FAIL_ON_EMPTY_BEANS: false
 
 keycloak:
